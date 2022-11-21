@@ -1,0 +1,16 @@
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\bin\Debug\Aplikasi kasir.exe.config
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\bin\Debug\Aplikasi kasir.exe
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\bin\Debug\Aplikasi kasir.pdb
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\bin\Debug\Aplikasi kasir.xml
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Debug\Aplikasi_kasir.Resources.resources
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Debug\Aplikasi kasir.vbproj.GenerateResource.cache
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Debug\Aplikasi kasir.vbproj.CoreCompileInputs.cache
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Debug\Aplikasi kasir.exe
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Debug\Aplikasi kasir.xml
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Debug\Aplikasi kasir.pdb
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Debug\Aplikasi_kasir.LoginForm1.resources
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Debug\Aplikasi kasir.vbproj.CopyComplete
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Debug\Aplikasi_kasir.Form2.resources
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Debug\Aplikasi_kasir.Login.resources
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Debug\Aplikasi_kasir.Form1.resources
