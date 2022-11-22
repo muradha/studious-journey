@@ -26,6 +26,7 @@ Public Class Form1
     End Sub
 
     Sub kondisiawal()
+        inputKode.Focus()
         inputNama.Text = ""
         inputPassword.Text = ""
         inputKode.Text = ""
@@ -76,7 +77,6 @@ Public Class Form1
         If Asc(e.KeyChar) = 13 Then
             conn.Open()
             cmd.Connection = conn
-            'cmd.CommandText = "select * from admin where id='1'"
             cmd.CommandText = "select * from admin where id='" & inputKode.Text & "'"
             cmd.CommandType = CommandType.Text
 
@@ -134,5 +134,29 @@ Public Class Form1
 
             conn.Close()
         End If
+    End Sub
+
+    Private Sub inputNama_KeyPress(sender As Object, e As KeyPressEventArgs) Handles inputNama.KeyPress
+        If e.KeyChar = Chr(13) Then inputPassword.Focus()
+    End Sub
+
+    Private Sub inputPassword_KeyPress(sender As Object, e As KeyPressEventArgs) Handles inputPassword.KeyPress
+        If e.KeyChar = Chr(13) Then levelInput.Focus()
+    End Sub
+
+    Private Sub TxtCari_TextChanged(sender As Object, e As EventArgs) Handles TxtCari.TextChanged
+        query = "select id as kode,nama,tingkat from admin WHERE nama like '%" & TxtCari.Text & "%' order by nama asc"
+        cmd = New OracleCommand(query, conn)
+        cmd.CommandType = CommandType.Text
+        da = New OracleDataAdapter(cmd)
+        cb = New OracleCommandBuilder(da)
+        ds = New DataSet()
+
+        DataGridView1.Refresh()
+
+        da.Fill(ds)
+        DataGridView1.DataSource = ds.Tables(0)
+
+        DataGridView1.ReadOnly = True
     End Sub
 End Class

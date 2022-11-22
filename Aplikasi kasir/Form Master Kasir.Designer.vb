@@ -41,6 +41,10 @@ Partial Class Form1
         Me.TransaksiPenjualanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TransaksiPembelianToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.TxtCari = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.inputNama = New System.Windows.Forms.TextBox()
         Me.inputKode = New System.Windows.Forms.TextBox()
         Me.inputPassword = New System.Windows.Forms.TextBox()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
@@ -48,7 +52,6 @@ Partial Class Form1
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.inputNama = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -57,7 +60,7 @@ Partial Class Form1
         'kode
         '
         Me.kode.AutoSize = True
-        Me.kode.Location = New System.Drawing.Point(244, 33)
+        Me.kode.Location = New System.Drawing.Point(22, 153)
         Me.kode.Name = "kode"
         Me.kode.Size = New System.Drawing.Size(33, 13)
         Me.kode.TabIndex = 0
@@ -75,7 +78,7 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(224, 82)
+        Me.Label2.Location = New System.Drawing.Point(6, 113)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(53, 13)
         Me.Label2.TabIndex = 2
@@ -84,7 +87,7 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(22, 82)
+        Me.Label3.Location = New System.Drawing.Point(22, 73)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(35, 13)
         Me.Label3.TabIndex = 3
@@ -93,17 +96,18 @@ Partial Class Form1
         'levelInput
         '
         Me.levelInput.FormattingEnabled = True
-        Me.levelInput.Location = New System.Drawing.Point(283, 33)
+        Me.levelInput.Location = New System.Drawing.Point(61, 153)
         Me.levelInput.Name = "levelInput"
-        Me.levelInput.Size = New System.Drawing.Size(121, 21)
+        Me.levelInput.Size = New System.Drawing.Size(119, 21)
         Me.levelInput.TabIndex = 10
         '
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(44, 208)
+        Me.DataGridView1.Location = New System.Drawing.Point(28, 257)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(657, 189)
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.Size = New System.Drawing.Size(399, 189)
         Me.DataGridView1.TabIndex = 11
         '
         'MenuStrip1
@@ -112,7 +116,7 @@ Partial Class Form1
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.ToolStripMenuItem1, Me.TransaksiToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(767, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(463, 24)
         Me.MenuStrip1.TabIndex = 14
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -188,6 +192,9 @@ Partial Class Form1
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.TxtCari)
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.inputNama)
         Me.Panel1.Controls.Add(Me.inputKode)
         Me.Panel1.Controls.Add(Me.inputPassword)
@@ -205,8 +212,42 @@ Partial Class Form1
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Location = New System.Drawing.Point(12, 12)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(767, 406)
+        Me.Panel1.Size = New System.Drawing.Size(463, 454)
         Me.Panel1.TabIndex = 14
+        '
+        'TxtCari
+        '
+        Me.TxtCari.Location = New System.Drawing.Point(142, 231)
+        Me.TxtCari.Name = "TxtCari"
+        Me.TxtCari.Size = New System.Drawing.Size(253, 20)
+        Me.TxtCari.TabIndex = 26
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(28, 234)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(108, 13)
+        Me.Label5.TabIndex = 24
+        Me.Label5.Text = "Masukan nama kasir:"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Red
+        Me.Label4.Location = New System.Drawing.Point(188, 36)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(158, 13)
+        Me.Label4.TabIndex = 23
+        Me.Label4.Text = "*[Enter] untuk melanjutkan"
+        '
+        'inputNama
+        '
+        Me.inputNama.Location = New System.Drawing.Point(61, 72)
+        Me.inputNama.Name = "inputNama"
+        Me.inputNama.Size = New System.Drawing.Size(119, 20)
+        Me.inputNama.TabIndex = 22
         '
         'inputKode
         '
@@ -217,16 +258,16 @@ Partial Class Form1
         '
         'inputPassword
         '
-        Me.inputPassword.Location = New System.Drawing.Point(283, 79)
+        Me.inputPassword.Location = New System.Drawing.Point(61, 112)
         Me.inputPassword.Name = "inputPassword"
-        Me.inputPassword.Size = New System.Drawing.Size(121, 20)
+        Me.inputPassword.Size = New System.Drawing.Size(119, 20)
         Me.inputPassword.TabIndex = 20
         Me.inputPassword.UseSystemPasswordChar = True
         '
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(411, 77)
+        Me.CheckBox1.Location = New System.Drawing.Point(188, 114)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(98, 17)
         Me.CheckBox1.TabIndex = 19
@@ -235,7 +276,7 @@ Partial Class Form1
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(320, 169)
+        Me.Button4.Location = New System.Drawing.Point(320, 194)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(75, 23)
         Me.Button4.TabIndex = 18
@@ -244,7 +285,7 @@ Partial Class Form1
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(227, 169)
+        Me.Button3.Location = New System.Drawing.Point(228, 194)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 17
@@ -253,7 +294,7 @@ Partial Class Form1
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(136, 169)
+        Me.Button2.Location = New System.Drawing.Point(136, 194)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 16
@@ -262,25 +303,18 @@ Partial Class Form1
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(44, 169)
+        Me.Button1.Location = New System.Drawing.Point(44, 194)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 15
         Me.Button1.Text = "INPUT"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'inputNama
-        '
-        Me.inputNama.Location = New System.Drawing.Point(64, 82)
-        Me.inputNama.Name = "inputNama"
-        Me.inputNama.Size = New System.Drawing.Size(118, 20)
-        Me.inputNama.TabIndex = 22
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(498, 478)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "Form1"
         Me.Text = "Form Master Kasir"
@@ -320,4 +354,7 @@ Partial Class Form1
     Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents inputKode As TextBox
     Friend WithEvents inputNama As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents TxtCari As TextBox
+    Friend WithEvents Label5 As Label
 End Class
