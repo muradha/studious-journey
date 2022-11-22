@@ -50,7 +50,7 @@ Public Class Form1
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        If inputKode.Text = "" & inputNama.Text = "" & inputPassword.Text = "" & levelInput.SelectedItem = "" Then
+        If inputKode.Text = "" Or inputNama.Text = "" Or inputPassword.Text = "" Or levelInput.Text = "" Then
             MsgBox("Silahkan isi data terlebih dahulu")
         Else
             cmd.CommandText = "INSERT INTO admin values ('" & inputKode.Text & "','" & inputNama.Text & "','" & inputPassword.Text & "', '" & levelInput.SelectedItem & "')"
@@ -72,10 +72,67 @@ Public Class Form1
     End Sub
 
 
-    Private Sub inputKode_KeyPress(sender As Object, e As KeyPressEventArgs, KeyAscii As Integer) Handles inputKode.KeyPress
+    Private Sub inputKode_KeyPress(sender As Object, e As KeyPressEventArgs) Handles inputKode.KeyPress
         If Asc(e.KeyChar) = 13 Then
             conn.Open()
+            cmd.Connection = conn
+            'cmd.CommandText = "select * from admin where id='1'"
+            cmd.CommandText = "select * from admin where id='" & inputKode.Text & "'"
+            cmd.CommandType = CommandType.Text
 
+            Dim dr As OracleDataReader = cmd.ExecuteReader()
+            If dr.Read() Then
+                inputNama.Text = dr.Item("nama")
+                inputPassword.Text = dr.Item("password")
+                levelInput.SelectedItem = dr.Item("tingkat")
+            Else
+                MsgBox("Data tidak ada")
+            End If
+            conn.Close()
+        End If
+    End Sub
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+        inputPassword.UseSystemPasswordChar = Not CheckBox1.Checked
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        If inputKode.Text = "" Or inputNama.Text = "" Or inputPassword.Text = "" Or levelInput.Text = "" Then
+            MsgBox("Silahkan isi data terlebih dahulu")
+        Else
+            cmd.CommandText = "UPDATE admin set nama='" & inputNama.Text & "', password='" & inputPassword.Text & "', tingkat='" & levelInput.SelectedItem & "' where id='" & inputKode.Text & "'"
+            cmd.Connection = conn
+            conn.Open()
+            Try
+                Dim aff As Integer = cmd.ExecuteNonQuery()
+                MessageBox.Show(aff & " rows were affected.")
+            Catch
+                MessageBox.Show("Error encountered during UPDATE operation.")
+            Finally
+                conn.Close()
+            End Try
+
+            conn.Close()
+        End If
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        If inputKode.Text = "" Or inputNama.Text = "" Or inputPassword.Text = "" Or levelInput.Text = "" Then
+            MsgBox("Silahkan isi data terlebih dahulu")
+        Else
+            cmd.CommandText = "DELETE FROM admin where id='" & inputKode.Text & "'"
+            cmd.Connection = conn
+            conn.Open()
+            Try
+                Dim aff As Integer = cmd.ExecuteNonQuery()
+                MessageBox.Show(aff & " rows were affected.")
+            Catch
+                MessageBox.Show("Error encountered during UPDATE operation.")
+            Finally
+                conn.Close()
+            End Try
+
+            conn.Close()
         End If
     End Sub
 End Class

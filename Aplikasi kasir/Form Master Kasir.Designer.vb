@@ -26,9 +26,6 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.inputNama = New System.Windows.Forms.RichTextBox()
-        Me.inputKode = New System.Windows.Forms.RichTextBox()
-        Me.inputPassword = New System.Windows.Forms.RichTextBox()
         Me.levelInput = New System.Windows.Forms.ComboBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
@@ -44,10 +41,14 @@ Partial Class Form1
         Me.TransaksiPenjualanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TransaksiPembelianToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.inputKode = New System.Windows.Forms.TextBox()
+        Me.inputPassword = New System.Windows.Forms.TextBox()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.inputNama = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -88,30 +89,6 @@ Partial Class Form1
         Me.Label3.Size = New System.Drawing.Size(35, 13)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Nama"
-        '
-        'inputNama
-        '
-        Me.inputNama.Location = New System.Drawing.Point(63, 79)
-        Me.inputNama.Name = "inputNama"
-        Me.inputNama.Size = New System.Drawing.Size(119, 43)
-        Me.inputNama.TabIndex = 5
-        Me.inputNama.Text = ""
-        '
-        'inputKode
-        '
-        Me.inputKode.Location = New System.Drawing.Point(63, 30)
-        Me.inputKode.Name = "inputKode"
-        Me.inputKode.Size = New System.Drawing.Size(119, 38)
-        Me.inputKode.TabIndex = 7
-        Me.inputKode.Text = ""
-        '
-        'inputPassword
-        '
-        Me.inputPassword.Location = New System.Drawing.Point(290, 79)
-        Me.inputPassword.Name = "inputPassword"
-        Me.inputPassword.Size = New System.Drawing.Size(114, 47)
-        Me.inputPassword.TabIndex = 8
-        Me.inputPassword.Text = ""
         '
         'levelInput
         '
@@ -211,24 +188,50 @@ Partial Class Form1
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.inputNama)
+        Me.Panel1.Controls.Add(Me.inputKode)
+        Me.Panel1.Controls.Add(Me.inputPassword)
+        Me.Panel1.Controls.Add(Me.CheckBox1)
         Me.Panel1.Controls.Add(Me.Button4)
         Me.Panel1.Controls.Add(Me.Button3)
         Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.kode)
-        Me.Panel1.Controls.Add(Me.inputPassword)
         Me.Panel1.Controls.Add(Me.levelInput)
         Me.Panel1.Controls.Add(Me.DataGridView1)
         Me.Panel1.Controls.Add(Me.MenuStrip1)
-        Me.Panel1.Controls.Add(Me.inputNama)
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.inputKode)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Location = New System.Drawing.Point(12, 12)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(767, 406)
         Me.Panel1.TabIndex = 14
+        '
+        'inputKode
+        '
+        Me.inputKode.Location = New System.Drawing.Point(63, 33)
+        Me.inputKode.Name = "inputKode"
+        Me.inputKode.Size = New System.Drawing.Size(119, 20)
+        Me.inputKode.TabIndex = 21
+        '
+        'inputPassword
+        '
+        Me.inputPassword.Location = New System.Drawing.Point(283, 79)
+        Me.inputPassword.Name = "inputPassword"
+        Me.inputPassword.Size = New System.Drawing.Size(121, 20)
+        Me.inputPassword.TabIndex = 20
+        Me.inputPassword.UseSystemPasswordChar = True
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(411, 77)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(98, 17)
+        Me.CheckBox1.TabIndex = 19
+        Me.CheckBox1.Text = "Lihat Password"
+        Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'Button4
         '
@@ -266,6 +269,13 @@ Partial Class Form1
         Me.Button1.Text = "INPUT"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'inputNama
+        '
+        Me.inputNama.Location = New System.Drawing.Point(64, 82)
+        Me.inputNama.Name = "inputNama"
+        Me.inputNama.Size = New System.Drawing.Size(118, 20)
+        Me.inputNama.TabIndex = 22
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -287,9 +297,6 @@ Partial Class Form1
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents inputNama As RichTextBox
-    Friend WithEvents inputKode As RichTextBox
-    Friend WithEvents inputPassword As RichTextBox
     Friend WithEvents levelInput As ComboBox
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents MenuStrip1 As MenuStrip
@@ -309,4 +316,8 @@ Partial Class Form1
     Friend WithEvents Button3 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents inputPassword As TextBox
+    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents inputKode As TextBox
+    Friend WithEvents inputNama As TextBox
 End Class
