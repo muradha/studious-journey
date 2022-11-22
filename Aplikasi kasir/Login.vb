@@ -4,7 +4,6 @@ Imports System.Data
 Public Class Login
 
     Private Sub OK_Click(sender As Object, e As EventArgs) Handles OK.Click
-        Dim oradb As String = "USER ID=C##SCOTT;PASSWORD=tiger;DATA SOURCE=localhost:1521/orcl"
         Dim conn As New OracleConnection(oradb)
         Dim cmd As New OracleCommand
         Dim cek As OracleDataReader
@@ -22,7 +21,7 @@ Public Class Login
             cek.Read()
             If cek.HasRows Then
                 Me.Hide()
-                Form2.Show()
+                Form1.Show()
             Else
                 MsgBox("Username atau Password salah !")
             End If
@@ -43,10 +42,12 @@ Public Class Login
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
-        Dim response As Integer
-        response = MessageBox.Show("Yakin ingin keluar dari aplikasi ?", "Keluar aplikasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-        If response = vbYes Then
-            Application.Exit()
-        End If
+        keluar()
     End Sub
+
+    Private Sub KasirToolStripMenuItem_Click(sender As Object, e As EventArgs)
+        Me.Hide()
+        Form1.Show()
+    End Sub
+
 End Class

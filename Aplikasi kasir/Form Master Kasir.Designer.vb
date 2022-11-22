@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,16 +20,16 @@ Partial Class Form1
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.kode = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
-        Me.RichTextBox3 = New System.Windows.Forms.RichTextBox()
-        Me.RichTextBox4 = New System.Windows.Forms.RichTextBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.inputNama = New System.Windows.Forms.RichTextBox()
+        Me.inputKode = New System.Windows.Forms.RichTextBox()
+        Me.inputPassword = New System.Windows.Forms.RichTextBox()
+        Me.levelInput = New System.Windows.Forms.ComboBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
@@ -89,37 +89,37 @@ Partial Class Form1
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Nama"
         '
-        'RichTextBox1
+        'inputNama
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(63, 79)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(119, 43)
-        Me.RichTextBox1.TabIndex = 5
-        Me.RichTextBox1.Text = ""
+        Me.inputNama.Location = New System.Drawing.Point(63, 79)
+        Me.inputNama.Name = "inputNama"
+        Me.inputNama.Size = New System.Drawing.Size(119, 43)
+        Me.inputNama.TabIndex = 5
+        Me.inputNama.Text = ""
         '
-        'RichTextBox3
+        'inputKode
         '
-        Me.RichTextBox3.Location = New System.Drawing.Point(63, 30)
-        Me.RichTextBox3.Name = "RichTextBox3"
-        Me.RichTextBox3.Size = New System.Drawing.Size(119, 38)
-        Me.RichTextBox3.TabIndex = 7
-        Me.RichTextBox3.Text = ""
+        Me.inputKode.Location = New System.Drawing.Point(63, 30)
+        Me.inputKode.Name = "inputKode"
+        Me.inputKode.Size = New System.Drawing.Size(119, 38)
+        Me.inputKode.TabIndex = 7
+        Me.inputKode.Text = ""
         '
-        'RichTextBox4
+        'inputPassword
         '
-        Me.RichTextBox4.Location = New System.Drawing.Point(290, 79)
-        Me.RichTextBox4.Name = "RichTextBox4"
-        Me.RichTextBox4.Size = New System.Drawing.Size(114, 47)
-        Me.RichTextBox4.TabIndex = 8
-        Me.RichTextBox4.Text = ""
+        Me.inputPassword.Location = New System.Drawing.Point(290, 79)
+        Me.inputPassword.Name = "inputPassword"
+        Me.inputPassword.Size = New System.Drawing.Size(114, 47)
+        Me.inputPassword.TabIndex = 8
+        Me.inputPassword.Text = ""
         '
-        'ComboBox1
+        'levelInput
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(283, 33)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox1.TabIndex = 10
+        Me.levelInput.FormattingEnabled = True
+        Me.levelInput.Location = New System.Drawing.Point(283, 33)
+        Me.levelInput.Name = "levelInput"
+        Me.levelInput.Size = New System.Drawing.Size(121, 21)
+        Me.levelInput.TabIndex = 10
         '
         'DataGridView1
         '
@@ -149,19 +149,19 @@ Partial Class Form1
         'LoginToolStripMenuItem
         '
         Me.LoginToolStripMenuItem.Name = "LoginToolStripMenuItem"
-        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(112, 22)
         Me.LoginToolStripMenuItem.Text = "Login"
         '
         'LogoutToolStripMenuItem
         '
         Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(112, 22)
         Me.LogoutToolStripMenuItem.Text = "Logout"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(112, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'ToolStripMenuItem1
@@ -216,13 +216,13 @@ Partial Class Form1
         Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.kode)
-        Me.Panel1.Controls.Add(Me.RichTextBox4)
-        Me.Panel1.Controls.Add(Me.ComboBox1)
+        Me.Panel1.Controls.Add(Me.inputPassword)
+        Me.Panel1.Controls.Add(Me.levelInput)
         Me.Panel1.Controls.Add(Me.DataGridView1)
         Me.Panel1.Controls.Add(Me.MenuStrip1)
-        Me.Panel1.Controls.Add(Me.RichTextBox1)
+        Me.Panel1.Controls.Add(Me.inputNama)
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.RichTextBox3)
+        Me.Panel1.Controls.Add(Me.inputKode)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Location = New System.Drawing.Point(12, 12)
@@ -287,10 +287,10 @@ Partial Class Form1
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents RichTextBox1 As RichTextBox
-    Friend WithEvents RichTextBox3 As RichTextBox
-    Friend WithEvents RichTextBox4 As RichTextBox
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents inputNama As RichTextBox
+    Friend WithEvents inputKode As RichTextBox
+    Friend WithEvents inputPassword As RichTextBox
+    Friend WithEvents levelInput As ComboBox
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem

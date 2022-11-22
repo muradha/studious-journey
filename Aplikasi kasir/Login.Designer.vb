@@ -36,15 +36,7 @@ Partial Class Login
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoginToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.KasirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.OwnerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MinumanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TransaksiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TransaksiPenjualanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TransaksiPembelianToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -150,7 +142,7 @@ Partial Class Login
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.Transparent
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.ToolStripMenuItem1, Me.TransaksiToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(679, 24)
@@ -159,7 +151,7 @@ Partial Class Login
         '
         'ToolStripMenuItem2
         '
-        Me.ToolStripMenuItem2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoginToolStripMenuItem, Me.LogoutToolStripMenuItem, Me.ExitToolStripMenuItem})
+        Me.ToolStripMenuItem2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoginToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
         Me.ToolStripMenuItem2.Size = New System.Drawing.Size(54, 20)
         Me.ToolStripMenuItem2.Text = "Profile"
@@ -167,64 +159,14 @@ Partial Class Login
         'LoginToolStripMenuItem
         '
         Me.LoginToolStripMenuItem.Name = "LoginToolStripMenuItem"
-        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(105, 22)
         Me.LoginToolStripMenuItem.Text = "Login"
-        '
-        'LogoutToolStripMenuItem
-        '
-        Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.LogoutToolStripMenuItem.Text = "Logout"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(105, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
-        '
-        'ToolStripMenuItem1
-        '
-        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.KasirToolStripMenuItem, Me.OwnerToolStripMenuItem, Me.MinumanToolStripMenuItem})
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(85, 20)
-        Me.ToolStripMenuItem1.Text = "Data Master"
-        '
-        'KasirToolStripMenuItem
-        '
-        Me.KasirToolStripMenuItem.Name = "KasirToolStripMenuItem"
-        Me.KasirToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
-        Me.KasirToolStripMenuItem.Text = "Kasir"
-        '
-        'OwnerToolStripMenuItem
-        '
-        Me.OwnerToolStripMenuItem.Name = "OwnerToolStripMenuItem"
-        Me.OwnerToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
-        Me.OwnerToolStripMenuItem.Text = "Owner"
-        '
-        'MinumanToolStripMenuItem
-        '
-        Me.MinumanToolStripMenuItem.Name = "MinumanToolStripMenuItem"
-        Me.MinumanToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
-        Me.MinumanToolStripMenuItem.Text = "Minuman"
-        '
-        'TransaksiToolStripMenuItem
-        '
-        Me.TransaksiToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TransaksiPenjualanToolStripMenuItem, Me.TransaksiPembelianToolStripMenuItem})
-        Me.TransaksiToolStripMenuItem.Name = "TransaksiToolStripMenuItem"
-        Me.TransaksiToolStripMenuItem.Size = New System.Drawing.Size(74, 20)
-        Me.TransaksiToolStripMenuItem.Text = "Transaksi"
-        '
-        'TransaksiPenjualanToolStripMenuItem
-        '
-        Me.TransaksiPenjualanToolStripMenuItem.Name = "TransaksiPenjualanToolStripMenuItem"
-        Me.TransaksiPenjualanToolStripMenuItem.Size = New System.Drawing.Size(192, 22)
-        Me.TransaksiPenjualanToolStripMenuItem.Text = "Transaksi Penjualan"
-        '
-        'TransaksiPembelianToolStripMenuItem
-        '
-        Me.TransaksiPembelianToolStripMenuItem.Name = "TransaksiPembelianToolStripMenuItem"
-        Me.TransaksiPembelianToolStripMenuItem.Size = New System.Drawing.Size(192, 22)
-        Me.TransaksiPembelianToolStripMenuItem.Text = "Transaksi Pembelian"
         '
         'Login
         '
@@ -234,7 +176,7 @@ Partial Class Login
         Me.Controls.Add(Me.Panel1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Login"
-        Me.Text = "Form1"
+        Me.Text = "Form Login"
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -256,14 +198,6 @@ Partial Class Login
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
     Friend WithEvents LoginToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents LogoutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents KasirToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents OwnerToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents MinumanToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents TransaksiToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents TransaksiPenjualanToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents TransaksiPembelianToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CheckBox1 As CheckBox
 End Class
