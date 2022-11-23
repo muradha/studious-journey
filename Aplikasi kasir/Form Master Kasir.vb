@@ -159,4 +159,9 @@ Public Class Form1
 
         DataGridView1.ReadOnly = True
     End Sub
+
+    Private Sub SupplierToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SupplierToolStripMenuItem.Click
+        Me.Hide()
+        FormSupplier.Show()
+    End Sub
 End Class

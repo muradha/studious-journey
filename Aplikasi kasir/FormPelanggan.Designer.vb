@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Form1
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class FormPelanggan
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()>
+    <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,13 +20,11 @@ Partial Class Form1
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()>
+    <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.TxtNo = New System.Windows.Forms.TextBox()
+        Me.BtnUbah = New System.Windows.Forms.Button()
         Me.kode = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.levelInput = New System.Windows.Forms.ComboBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
@@ -40,84 +38,67 @@ Partial Class Form1
         Me.TransaksiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TransaksiPenjualanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TransaksiPembelianToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.CmbStatus = New System.Windows.Forms.ComboBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.TxtCari = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.inputNama = New System.Windows.Forms.TextBox()
-        Me.inputKode = New System.Windows.Forms.TextBox()
-        Me.inputPassword = New System.Windows.Forms.TextBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.SupplierToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TxtNama = New System.Windows.Forms.TextBox()
+        Me.TxtKode = New System.Windows.Forms.TextBox()
+        Me.TxtAlamat = New System.Windows.Forms.TextBox()
+        Me.BtnBatal = New System.Windows.Forms.Button()
+        Me.BtnHapus = New System.Windows.Forms.Button()
+        Me.BtnSimpan = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
+        'TxtNo
+        '
+        Me.TxtNo.Location = New System.Drawing.Point(96, 154)
+        Me.TxtNo.Name = "TxtNo"
+        Me.TxtNo.Size = New System.Drawing.Size(119, 20)
+        Me.TxtNo.TabIndex = 27
+        '
+        'BtnUbah
+        '
+        Me.BtnUbah.Location = New System.Drawing.Point(136, 234)
+        Me.BtnUbah.Name = "BtnUbah"
+        Me.BtnUbah.Size = New System.Drawing.Size(75, 23)
+        Me.BtnUbah.TabIndex = 16
+        Me.BtnUbah.Text = "UBAH"
+        Me.BtnUbah.UseVisualStyleBackColor = True
+        '
         'kode
         '
         Me.kode.AutoSize = True
-        Me.kode.Location = New System.Drawing.Point(22, 153)
+        Me.kode.Location = New System.Drawing.Point(54, 157)
         Me.kode.Name = "kode"
-        Me.kode.Size = New System.Drawing.Size(33, 13)
+        Me.kode.Size = New System.Drawing.Size(41, 13)
         Me.kode.TabIndex = 0
-        Me.kode.Text = "Level"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(25, 33)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(32, 13)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Kode"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(6, 113)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(53, 13)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Password"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(22, 73)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(35, 13)
-        Me.Label3.TabIndex = 3
-        Me.Label3.Text = "Nama"
-        '
-        'levelInput
-        '
-        Me.levelInput.FormattingEnabled = True
-        Me.levelInput.Location = New System.Drawing.Point(61, 153)
-        Me.levelInput.Name = "levelInput"
-        Me.levelInput.Size = New System.Drawing.Size(119, 21)
-        Me.levelInput.TabIndex = 10
+        Me.kode.Text = "No telp"
         '
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(28, 257)
+        Me.DataGridView1.Location = New System.Drawing.Point(28, 297)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(399, 189)
+        Me.DataGridView1.Size = New System.Drawing.Size(603, 189)
         Me.DataGridView1.TabIndex = 11
         '
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.Transparent
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.ToolStripMenuItem1, Me.TransaksiToolStripMenuItem, Me.SupplierToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.ToolStripMenuItem1, Me.TransaksiToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(463, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(652, 24)
         Me.MenuStrip1.TabIndex = 14
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -190,35 +171,80 @@ Partial Class Form1
         Me.TransaksiPembelianToolStripMenuItem.Size = New System.Drawing.Size(192, 22)
         Me.TransaksiPembelianToolStripMenuItem.Text = "Transaksi Pembelian"
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(9, 37)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(86, 13)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Kode Pelanggan"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(56, 117)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(39, 13)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "Alamat"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(60, 77)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(35, 13)
+        Me.Label3.TabIndex = 3
+        Me.Label3.Text = "Nama"
+        '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.CmbStatus)
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.TxtNo)
         Me.Panel1.Controls.Add(Me.TxtCari)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Label4)
-        Me.Panel1.Controls.Add(Me.inputNama)
-        Me.Panel1.Controls.Add(Me.inputKode)
-        Me.Panel1.Controls.Add(Me.inputPassword)
-        Me.Panel1.Controls.Add(Me.CheckBox1)
-        Me.Panel1.Controls.Add(Me.Button4)
-        Me.Panel1.Controls.Add(Me.Button3)
-        Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.TxtNama)
+        Me.Panel1.Controls.Add(Me.TxtKode)
+        Me.Panel1.Controls.Add(Me.TxtAlamat)
+        Me.Panel1.Controls.Add(Me.BtnBatal)
+        Me.Panel1.Controls.Add(Me.BtnHapus)
+        Me.Panel1.Controls.Add(Me.BtnUbah)
+        Me.Panel1.Controls.Add(Me.BtnSimpan)
         Me.Panel1.Controls.Add(Me.kode)
-        Me.Panel1.Controls.Add(Me.levelInput)
         Me.Panel1.Controls.Add(Me.DataGridView1)
         Me.Panel1.Controls.Add(Me.MenuStrip1)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Location = New System.Drawing.Point(12, 12)
+        Me.Panel1.Location = New System.Drawing.Point(23, 12)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(463, 454)
-        Me.Panel1.TabIndex = 14
+        Me.Panel1.Size = New System.Drawing.Size(652, 557)
+        Me.Panel1.TabIndex = 16
+        '
+        'CmbStatus
+        '
+        Me.CmbStatus.FormattingEnabled = True
+        Me.CmbStatus.Location = New System.Drawing.Point(94, 191)
+        Me.CmbStatus.Name = "CmbStatus"
+        Me.CmbStatus.Size = New System.Drawing.Size(121, 21)
+        Me.CmbStatus.TabIndex = 30
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(54, 194)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(37, 13)
+        Me.Label6.TabIndex = 28
+        Me.Label6.Text = "Status"
         '
         'TxtCari
         '
-        Me.TxtCari.Location = New System.Drawing.Point(142, 231)
+        Me.TxtCari.Location = New System.Drawing.Point(142, 271)
         Me.TxtCari.Name = "TxtCari"
         Me.TxtCari.Size = New System.Drawing.Size(253, 20)
         Me.TxtCari.TabIndex = 26
@@ -226,105 +252,82 @@ Partial Class Form1
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(28, 234)
+        Me.Label5.Location = New System.Drawing.Point(28, 275)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(108, 13)
         Me.Label5.TabIndex = 24
-        Me.Label5.Text = "Masukan nama kasir:"
+        Me.Label5.Text = "Cari nama Pelanggan"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Red
-        Me.Label4.Location = New System.Drawing.Point(188, 36)
+        Me.Label4.Location = New System.Drawing.Point(223, 37)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(158, 13)
         Me.Label4.TabIndex = 23
         Me.Label4.Text = "*[Enter] untuk melanjutkan"
         '
-        'inputNama
+        'TxtNama
         '
-        Me.inputNama.Location = New System.Drawing.Point(61, 72)
-        Me.inputNama.Name = "inputNama"
-        Me.inputNama.Size = New System.Drawing.Size(119, 20)
-        Me.inputNama.TabIndex = 22
+        Me.TxtNama.Location = New System.Drawing.Point(96, 74)
+        Me.TxtNama.Name = "TxtNama"
+        Me.TxtNama.Size = New System.Drawing.Size(119, 20)
+        Me.TxtNama.TabIndex = 22
         '
-        'inputKode
+        'TxtKode
         '
-        Me.inputKode.Location = New System.Drawing.Point(63, 33)
-        Me.inputKode.Name = "inputKode"
-        Me.inputKode.Size = New System.Drawing.Size(119, 20)
-        Me.inputKode.TabIndex = 21
+        Me.TxtKode.Location = New System.Drawing.Point(96, 34)
+        Me.TxtKode.Name = "TxtKode"
+        Me.TxtKode.Size = New System.Drawing.Size(119, 20)
+        Me.TxtKode.TabIndex = 21
         '
-        'inputPassword
+        'TxtAlamat
         '
-        Me.inputPassword.Location = New System.Drawing.Point(61, 112)
-        Me.inputPassword.Name = "inputPassword"
-        Me.inputPassword.Size = New System.Drawing.Size(119, 20)
-        Me.inputPassword.TabIndex = 20
-        Me.inputPassword.UseSystemPasswordChar = True
+        Me.TxtAlamat.Location = New System.Drawing.Point(96, 114)
+        Me.TxtAlamat.Name = "TxtAlamat"
+        Me.TxtAlamat.Size = New System.Drawing.Size(119, 20)
+        Me.TxtAlamat.TabIndex = 20
         '
-        'CheckBox1
+        'BtnBatal
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(188, 114)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(98, 17)
-        Me.CheckBox1.TabIndex = 19
-        Me.CheckBox1.Text = "Lihat Password"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.BtnBatal.Location = New System.Drawing.Point(320, 234)
+        Me.BtnBatal.Name = "BtnBatal"
+        Me.BtnBatal.Size = New System.Drawing.Size(75, 23)
+        Me.BtnBatal.TabIndex = 18
+        Me.BtnBatal.Text = "BATAL"
+        Me.BtnBatal.UseVisualStyleBackColor = True
         '
-        'Button4
+        'BtnHapus
         '
-        Me.Button4.Location = New System.Drawing.Point(320, 194)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 23)
-        Me.Button4.TabIndex = 18
-        Me.Button4.Text = "TUTUP"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.BtnHapus.Location = New System.Drawing.Point(228, 234)
+        Me.BtnHapus.Name = "BtnHapus"
+        Me.BtnHapus.Size = New System.Drawing.Size(75, 23)
+        Me.BtnHapus.TabIndex = 17
+        Me.BtnHapus.Text = "HAPUS"
+        Me.BtnHapus.UseVisualStyleBackColor = True
         '
-        'Button3
+        'BtnSimpan
         '
-        Me.Button3.Location = New System.Drawing.Point(228, 194)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 17
-        Me.Button3.Text = "HAPUS"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.BtnSimpan.Location = New System.Drawing.Point(44, 234)
+        Me.BtnSimpan.Name = "BtnSimpan"
+        Me.BtnSimpan.Size = New System.Drawing.Size(75, 23)
+        Me.BtnSimpan.TabIndex = 15
+        Me.BtnSimpan.Text = "SIMPAN"
+        Me.BtnSimpan.UseVisualStyleBackColor = True
         '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(136, 194)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 16
-        Me.Button2.Text = "EDIT"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(44, 194)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 15
-        Me.Button1.Text = "INPUT"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'SupplierToolStripMenuItem
-        '
-        Me.SupplierToolStripMenuItem.Name = "SupplierToolStripMenuItem"
-        Me.SupplierToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
-        Me.SupplierToolStripMenuItem.Text = "Supplier"
-        '
-        'Form1
+        'FormPelanggan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(498, 478)
+        Me.ClientSize = New System.Drawing.Size(699, 594)
         Me.Controls.Add(Me.Panel1)
-        Me.Name = "Form1"
-        Me.Text = "Form Master Kasir"
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
+        Me.Name = "FormPelanggan"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Pelanggan"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
@@ -334,11 +337,9 @@ Partial Class Form1
 
     End Sub
 
+    Friend WithEvents TxtNo As TextBox
+    Friend WithEvents BtnUbah As Button
     Friend WithEvents kode As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents levelInput As ComboBox
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
@@ -352,17 +353,19 @@ Partial Class Form1
     Friend WithEvents TransaksiToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TransaksiPenjualanToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TransaksiPembelianToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
-    Friend WithEvents inputPassword As TextBox
-    Friend WithEvents CheckBox1 As CheckBox
-    Friend WithEvents inputKode As TextBox
-    Friend WithEvents inputNama As TextBox
-    Friend WithEvents Label4 As Label
     Friend WithEvents TxtCari As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents SupplierToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Label4 As Label
+    Friend WithEvents TxtNama As TextBox
+    Friend WithEvents TxtKode As TextBox
+    Friend WithEvents TxtAlamat As TextBox
+    Friend WithEvents BtnBatal As Button
+    Friend WithEvents BtnHapus As Button
+    Friend WithEvents BtnSimpan As Button
+    Friend WithEvents CmbStatus As ComboBox
+    Friend WithEvents Label6 As Label
 End Class
