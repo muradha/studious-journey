@@ -6,7 +6,6 @@ Public Class FormPelanggan
     Dim da As OracleDataAdapter
     Dim cb As OracleCommandBuilder
     Dim ds As DataSet
-    Dim query As String
 
     Sub Bersih()
         TxtKode.Enabled = True
@@ -96,24 +95,24 @@ Public Class FormPelanggan
         If TxtKode.Text = "" Or CmbStatus.Text = "" Then
             MsgBox("Kode / status masih kosong")
             Exit Sub
-        End If
-
-        cmd = New OracleCommand("SELECT * FROM pelanggan WHERE kode_pelanggan='" & TxtKode.Text & "'", conn)
-        rd = cmd.ExecuteReader
-        rd.Read()
-
-        If Not rd.HasRows Then
-            Dim queryTambah As String = "INSERT INTO pelanggan(kode_pelanggan,nama_pelanggan,alamat_pelanggan,no_telp,status_pelanggan) values('" & TxtKode.Text & "','" & TxtNama.Text & "','" & TxtAlamat.Text & "','" & TxtNo.Text & "','" & CmbStatus.Text & "')"
-            cmd = New OracleCommand(queryTambah, conn)
-            cmd.ExecuteNonQuery()
-            Bersih()
-            TampilGrid()
-            TxtKode.Focus()
         Else
-            MsgBox("Data telah ada sebelumnya", vbInformation + vbOKOnly, "Pesan")
-            TampilGrid()
+            cmd = New OracleCommand("SELECT * FROM pelanggan WHERE kode_pelanggan='" & TxtKode.Text & "'", conn)
+            rd = cmd.ExecuteReader
+            rd.Read()
+
+            If Not rd.HasRows Then
+                Dim queryTambah As String = "INSERT INTO pelanggan(kode_pelanggan,nama_pelanggan,alamat_pelanggan,no_telp,status_pelanggan) values('" & TxtKode.Text & "','" & TxtNama.Text & "','" & TxtAlamat.Text & "','" & TxtNo.Text & "','" & CmbStatus.Text & "')"
+                cmd = New OracleCommand(queryTambah, conn)
+                cmd.ExecuteNonQuery()
+                Bersih()
+                TampilGrid()
+                TxtKode.Focus()
+            Else
+                MsgBox("Data telah ada sebelumnya", vbInformation + vbOKOnly, "Pesan")
+                TampilGrid()
+            End If
+            conn.Close()
         End If
-        conn.Close()
     End Sub
 
     Private Sub BtnBatal_Click(sender As Object, e As EventArgs) Handles BtnBatal.Click

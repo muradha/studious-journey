@@ -16,3 +16,4 @@ D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Debug\Aplikasi_k
 D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Debug\Aplikasi kasir.vbproj.AssemblyReference.cache
 D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Debug\Aplikasi_kasir.FormSupplier.resources
 D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Debug\Aplikasi_kasir.FormPelanggan.resources
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Debug\Aplikasi_kasir.FormSatuan.resources
