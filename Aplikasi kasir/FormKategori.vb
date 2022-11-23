@@ -1,5 +1,5 @@
 ﻿Imports Oracle.ManagedDataAccess.Client
-Public Class FormPelanggan
+Public Class FormKategori
     Dim conn As New OracleConnection(oradb)
     Dim cmd As New OracleCommand
     Dim rd As OracleDataReader
@@ -11,44 +11,40 @@ Public Class FormPelanggan
         TxtKode.Enabled = True
         TxtKode.Text = ""
         TxtNama.Text = ""
-        TxtAlamat.Text = ""
         TxtNo.Text = ""
-        CmbStatus.Text = ""
+
         BtnUbah.Enabled = False
         BtnHapus.Enabled = False
         BtnSimpan.Enabled = True
     End Sub
 
     Sub TampilGrid()
-        da = New OracleDataAdapter("SELECT * FROM pelanggan", conn)
+        da = New OracleDataAdapter("SELECT * FROM kategori", conn)
         ds = New DataSet
         ds.Clear()
-        da.Fill(ds, "PELANGGAN")
-        DataGridView1.DataSource = (ds.Tables("PELANGGAN"))
+        da.Fill(ds, "KATEGORI")
+        DataGridView1.DataSource = (ds.Tables("KATEGORI"))
         DataGridView1.ReadOnly = True
     End Sub
-    Private Sub FormPelanggan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    Private Sub FormKategori_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conn.Open()
         TampilGrid()
         Bersih()
-        CmbStatus.Items.Add("Umum")
-        CmbStatus.Items.Add("Langganan")
         conn.Close()
     End Sub
 
     Private Sub TxtKode_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtKode.KeyPress
         conn.Open()
         If e.KeyChar = Chr(13) Then
-            cmd = New OracleCommand("SELECT * FROM pelanggan WHERE kode_pelanggan='" & TxtKode.Text & "'", conn)
+            cmd = New OracleCommand("SELECT * FROM kategori WHERE kode_kategori='" & TxtKode.Text & "'", conn)
             rd = cmd.ExecuteReader
             rd.Read()
             If rd.HasRows = True Then
                 MsgBox("Data Ditemukan", vbInformation + vbOKOnly, "Pesan")
-                TxtKode.Text = rd.Item("KODE_PELANGGAN")
-                TxtNama.Text = rd.Item("NAMA_PELANGGAN")
-                TxtAlamat.Text = rd.Item("ALAMAT_PELANGGAN")
-                TxtNo.Text = rd.Item("NO_TELP")
-                CmbStatus.Text = rd.Item("STATUS_PELANGGAN")
+                TxtKode.Text = rd.Item("KODE_KATEGORI")
+                TxtNama.Text = rd.Item("NAMA_KATEGORI")
+                TxtNo.Text = rd.Item("NO_RAK")
 
                 TxtKode.Enabled = False
                 BtnSimpan.Enabled = False
@@ -64,44 +60,33 @@ Public Class FormPelanggan
 
     Private Sub TxtNama_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtNama.KeyPress
         If e.KeyChar = Chr(13) Then
-            TxtAlamat.Focus()
-        End If
-    End Sub
-    Private Sub TxtAlamat_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtAlamat.KeyPress
-        If e.KeyChar = Chr(13) Then
             TxtNo.Focus()
         End If
     End Sub
 
-
     Private Sub TxtNo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtNo.KeyPress
         If e.KeyChar = Chr(13) Then
-            CmbStatus.Focus()
-        End If
-        If Not ((e.KeyChar >= "0" And e.KeyChar <= "9") Or e.KeyChar = vbBack) Then e.Handled() = True
-    End Sub
-
-    Private Sub CmbStatus_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbStatus.SelectedIndexChanged
-        If BtnSimpan.Enabled = True Then
-            BtnSimpan.Focus()
-        Else
-            BtnUbah.Focus()
+            If BtnSimpan.Enabled = True Then
+                BtnSimpan.Focus()
+            Else
+                BtnUbah.Focus()
+            End If
         End If
     End Sub
 
     Private Sub BtnSimpan_Click(sender As Object, e As EventArgs) Handles BtnSimpan.Click
         conn.Open()
 
-        If TxtKode.Text = "" Or CmbStatus.Text = "" Then
-            MsgBox("Kode / status masih kosong")
+        If TxtKode.Text = "" Or TxtNama.Text = "" Or TxtNo.Text = "" Then
+            MsgBox("Data masih ada yang kosong")
             Exit Sub
         Else
-            cmd = New OracleCommand("SELECT * FROM pelanggan WHERE kode_pelanggan='" & TxtKode.Text & "'", conn)
+            cmd = New OracleCommand("SELECT * FROM kategori WHERE kode_kategori='" & TxtKode.Text & "'", conn)
             rd = cmd.ExecuteReader
             rd.Read()
 
             If Not rd.HasRows Then
-                Dim queryTambah As String = "INSERT INTO pelanggan(kode_pelanggan,nama_pelanggan,alamat_pelanggan,no_telp,status_pelanggan) values('" & TxtKode.Text & "','" & TxtNama.Text & "','" & TxtAlamat.Text & "','" & TxtNo.Text & "','" & CmbStatus.Text & "')"
+                Dim queryTambah As String = "INSERT INTO kategori values('" & TxtKode.Text & "','" & TxtNama.Text & "','" & TxtNo.Text & "')"
                 cmd = New OracleCommand(queryTambah, conn)
                 cmd.ExecuteNonQuery()
                 Bersih()
@@ -119,6 +104,7 @@ Public Class FormPelanggan
         Bersih()
         TampilGrid()
         TxtKode.Focus()
+
     End Sub
 
     Private Sub BtnUbah_Click(sender As Object, e As EventArgs) Handles BtnUbah.Click
@@ -129,7 +115,7 @@ Public Class FormPelanggan
             BtnBatal.Focus()
             Exit Sub
         Else
-            cmd = New OracleCommand("UPDATE pelanggan SET nama_pelanggan='" & TxtNama.Text & "',alamat_pelanggan='" & TxtAlamat.Text & "',no_telp='" & TxtNo.Text & "',status_pelanggan='" & CmbStatus.Text & "' WHERE kode_pelanggan='" & TxtKode.Text & "'", conn)
+            cmd = New OracleCommand("UPDATE kategori SET nama_kategori='" & TxtNama.Text & "',no_rak='" & TxtNo.Text & "' WHERE kode_kategori='" & TxtKode.Text & "'", conn)
             cmd.ExecuteNonQuery()
             Bersih()
             TampilGrid()
@@ -147,7 +133,7 @@ Public Class FormPelanggan
             Exit Sub
         Else
             If MessageBox.Show("Yakin akan dihapus...?", "Konfirmasi", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.Yes Then
-                cmd = New OracleCommand("DELETE FROM pelanggan WHERE kode_pelanggan='" & TxtKode.Text & "'", conn)
+                cmd = New OracleCommand("DELETE FROM kategori WHERE kode_kategori='" & TxtKode.Text & "'", conn)
                 cmd.ExecuteNonQuery()
                 Bersih()
                 TampilGrid()
@@ -160,14 +146,5 @@ Public Class FormPelanggan
             End If
         End If
         conn.Close()
-    End Sub
-
-    Private Sub TxtCari_TextChanged(sender As Object, e As EventArgs) Handles TxtCari.TextChanged
-        da = New OracleDataAdapter("SELECT * FROM pelanggan WHERE nama_pelanggan like '%" & TxtCari.Text & "%' ORDER BY nama_pelanggan ASC", conn)
-        ds = New DataSet
-        ds.Clear()
-        da.Fill(ds, "PELANGGAN")
-        DataGridView1.DataSource = (ds.Tables("PELANGGAN"))
-        DataGridView1.ReadOnly = True
     End Sub
 End Class

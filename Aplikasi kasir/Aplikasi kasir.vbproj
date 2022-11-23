@@ -129,6 +129,12 @@
     <Compile Include="Form Master Kasir.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormKategori.Designer.vb">
+      <DependentUpon>FormKategori.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormKategori.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormPelanggan.Designer.vb">
       <DependentUpon>FormPelanggan.vb</DependentUpon>
     </Compile>
@@ -181,6 +187,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Form Master Kasir.resx">
       <DependentUpon>Form Master Kasir.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKategori.resx">
+      <DependentUpon>FormKategori.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPelanggan.resx">
       <DependentUpon>FormPelanggan.vb</DependentUpon>
