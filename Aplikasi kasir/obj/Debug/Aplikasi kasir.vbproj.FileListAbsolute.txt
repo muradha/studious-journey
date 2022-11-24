@@ -20,3 +20,4 @@ D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Debug\Aplikasi_k
 D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Debug\Aplikasi_kasir.FormKategori.resources
 D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Debug\Aplikasi_kasir.FormBarang.resources
 D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Debug\Aplikasi_kasir.FormDataBarang.resources
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Debug\Aplikasi_kasir.FormDataPelanggan.resources
