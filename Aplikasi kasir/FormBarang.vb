@@ -1,4 +1,5 @@
 ﻿Imports Oracle.ManagedDataAccess.Client
+Imports System.Drawing.Printing
 Public Class FormBarang
     Dim conn As New OracleConnection(oradb)
     Dim cmd As New OracleCommand
@@ -6,6 +7,10 @@ Public Class FormBarang
     Dim da As OracleDataAdapter
     Dim cb As OracleCommandBuilder
     Dim ds As DataSet
+    Dim WithEvents PD As New PrintDocument
+    Dim PDD As New PrintPreviewDialog
+    Dim t_qty As Long
+    Dim panjang As Integer
 
     Sub Bersih()
         TxtKode.Text = ""
@@ -200,5 +205,98 @@ Public Class FormBarang
             DataGridView1.DataSource = (ds.Tables("BARANG"))
             DataGridView1.ReadOnly = True
         End If
+    End Sub
+
+    Private Sub TxtStock_TextChanged(sender As Object, e As EventArgs) Handles TxtStock.TextChanged
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        ubahpanjang()
+        PDD.Document = PD
+        PDD.ShowDialog()
+        'PD.Print()
+    End Sub
+
+    Private Sub PD_BeginPrint(sender As Object, e As PrintEventArgs) Handles PD.BeginPrint
+        Dim pagesetup As New PageSettings
+        pagesetup.PaperSize = New PaperSize("Custom", 500, panjang)
+        PD.DefaultPageSettings = pagesetup
+    End Sub
+
+    Private Sub PD_PrintPage(sender As Object, e As PrintPageEventArgs) Handles PD.PrintPage
+        Dim f10 As New Font("Times New Roman", 10, FontStyle.Regular)
+        Dim f10b As New Font("Times New Roman", 10, FontStyle.Bold)
+        Dim f14 As New Font("Times New Roman", 14, FontStyle.Bold)
+
+        Dim leftmargin As Integer = PD.DefaultPageSettings.Margins.Left
+        Dim centermargin As Integer = PD.DefaultPageSettings.PaperSize.Width / 2
+        Dim rightmargin As Integer = PD.DefaultPageSettings.PaperSize.Width
+        Dim t_harga As Long
+
+
+        Dim kanan As New StringFormat
+        Dim tengah As New StringFormat
+        kanan.Alignment = StringAlignment.Far
+        tengah.Alignment = StringAlignment.Center
+
+        Dim garis As String
+        garis = "------------------------------------------------------------------------------------"
+
+        e.Graphics.DrawString("Nama Toko", f14, Brushes.Black, centermargin, 5, tengah)
+        e.Graphics.DrawString("Jl. Jendral Sudirman No.123", f10, Brushes.Black, centermargin, 25, tengah)
+        e.Graphics.DrawString("HP: 0000-1234-5678", f10, Brushes.Black, centermargin, 40, tengah)
+
+        e.Graphics.DrawString("No Faktur", f10, Brushes.Black, 0, 60)
+        e.Graphics.DrawString(":", f10, Brushes.Black, 65, 60)
+        e.Graphics.DrawString("12345", f10, Brushes.Black, 75, 60)
+
+        e.Graphics.DrawString("Kasir", f10, Brushes.Black, 0, 75)
+        e.Graphics.DrawString(":", f10, Brushes.Black, 65, 75)
+        e.Graphics.DrawString("Anisa", f10, Brushes.Black, 75, 75)
+
+        e.Graphics.DrawString("05/02/2021 00:00", f10, Brushes.Black, 0, 90)
+
+        e.Graphics.DrawString(garis, f10, Brushes.Black, 0, 100)
+        DataGridView1.AllowUserToAddRows = False
+
+        Dim tinggi As Integer
+        Dim i As Long
+        For baris As Integer = 0 To DataGridView1.RowCount - 1
+            tinggi += 15
+            e.Graphics.DrawString(DataGridView1.Rows(baris).Cells(0).Value.ToString, f10, Brushes.Black, 0, 100 + tinggi)
+            e.Graphics.DrawString(DataGridView1.Rows(baris).Cells(1).Value.ToString, f10, Brushes.Black, 100, 100 + tinggi)
+            e.Graphics.DrawString(DataGridView1.Rows(baris).Cells(4).Value.ToString, f10, Brushes.Black, 350, 100 + tinggi)
+
+
+            i = DataGridView1.Rows(baris).Cells(2).Value
+
+            DataGridView1.Rows(baris).Cells(2).Value = Format(i, "##,##0")
+            e.Graphics.DrawString(DataGridView1.Rows(baris).Cells(2).Value.ToString, f10, Brushes.Black, rightmargin - 30, 100 + tinggi, kanan)
+            e.Graphics.DrawString(DataGridView1.Rows(baris).Cells(3).Value.ToString, f10, Brushes.Black, rightmargin, 100 + tinggi, kanan)
+        Next
+
+        tinggi = 110 + tinggi
+        hitungtotal()
+        e.Graphics.DrawString(garis, f10, Brushes.Black, 0, tinggi)
+        e.Graphics.DrawString("Total : " & Format(t_qty, "##,##0"), f10b, Brushes.Black, rightmargin, 10 + tinggi, kanan)
+        e.Graphics.DrawString(t_qty, f10b, Brushes.Black, 0, 10 + tinggi)
+
+    End Sub
+    Sub hitungtotal()
+        Dim hitung As Long = 0
+        For baris As Long = 0 To DataGridView1.RowCount - 1
+            hitung = hitung + DataGridView1.Rows(baris).Cells(2).Value
+        Next
+
+        t_qty = hitung
+    End Sub
+
+    Sub ubahpanjang()
+        Dim rowcount As Integer
+        panjang = 0
+        rowcount = DataGridView1.Rows.Count
+        panjang = rowcount * 15
+        panjang = panjang + 200
     End Sub
 End Class

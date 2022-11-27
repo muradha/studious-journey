@@ -58,6 +58,8 @@ Partial Class FormBarang
         Me.kode = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -256,6 +258,7 @@ Partial Class FormBarang
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.BtnSatuan)
         Me.Panel1.Controls.Add(Me.BtnKategori)
         Me.Panel1.Controls.Add(Me.RbKode)
@@ -375,6 +378,18 @@ Partial Class FormBarang
         Me.GroupBox2.TabIndex = 36
         Me.GroupBox2.TabStop = False
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(469, 155)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 39
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'PrintDocument1
+        '
+        '
         'FormBarang
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -432,4 +447,6 @@ Partial Class FormBarang
     Friend WithEvents RbNama As RadioButton
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents Button1 As Button
+    Friend WithEvents PrintDocument1 As Printing.PrintDocument
 End Class

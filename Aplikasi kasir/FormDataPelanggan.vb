@@ -35,10 +35,6 @@ Public Class FormDataPelanggan
         End If
     End Sub
 
-    Private Sub DGVPelanggan_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVPelanggan.CellContentClick
-
-    End Sub
-
     Private Sub DGVPelanggan_DoubleClick(sender As Object, e As EventArgs) Handles DGVPelanggan.DoubleClick
         Try
             With DGVPelanggan

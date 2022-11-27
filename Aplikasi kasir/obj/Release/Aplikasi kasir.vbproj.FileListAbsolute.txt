@@ -1,0 +1,42 @@
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\bin\Release\Aplikasi kasir.exe.config
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\bin\Release\Aplikasi kasir.exe
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\bin\Release\Aplikasi kasir.pdb
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\bin\Release\Aplikasi kasir.xml
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\bin\Release\CrystalDecisions.CrystalReports.Engine.dll
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\bin\Release\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\bin\Release\CrystalDecisions.Shared.dll
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\bin\Release\log4net.dll
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\bin\Release\Oracle.ManagedDataAccess.dll
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\bin\Release\log4net.xml
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Release\Aplikasi kasir.vbproj.AssemblyReference.cache
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Release\Aplikasi_kasir.Form1.resources
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Release\Aplikasi_kasir.FormBarang.resources
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Release\Aplikasi_kasir.FormDataBarang.resources
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Release\Aplikasi_kasir.FormDataPelanggan.resources
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Release\Aplikasi_kasir.FormDataSupplier.resources
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Release\Aplikasi_kasir.FormKategori.resources
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Release\Aplikasi_kasir.FormPelanggan.resources
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Release\Aplikasi_kasir.FormSatuan.resources
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Release\Aplikasi_kasir.FormSupplier.resources
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Release\Aplikasi_kasir.Login.resources
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Release\Aplikasi_kasir.Form2.resources
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Release\Aplikasi_kasir.Resources.resources
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Release\Aplikasi kasir.vbproj.GenerateResource.cache
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Release\Aplikasi kasir.vbproj.CoreCompileInputs.cache
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Release\Aplikasi kasir.vbproj.CopyComplete
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Release\Aplikasi kasir.exe
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Release\Aplikasi kasir.xml
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Release\Aplikasi kasir.pdb
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\bin\Release\CrystalDecisions.ReportSource.dll
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\bin\Release\CrystalDecisions.ReportAppServer.DataDefModel.dll
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\bin\Release\CrystalDecisions.ReportAppServer.ClientDoc.dll
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\bin\Release\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\bin\Release\CrystalDecisions.ReportAppServer.Controllers.dll
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\bin\Release\CrystalDecisions.ReportAppServer.CommLayer.dll
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\bin\Release\CrystalDecisions.ReportAppServer.Prompting.dll
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\bin\Release\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\bin\Release\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\bin\Release\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\bin\Release\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\bin\Release\CrystalDecisions.ReportAppServer.CommonControls.dll
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\bin\Release\stdole.dll

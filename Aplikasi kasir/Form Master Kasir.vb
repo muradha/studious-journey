@@ -160,8 +160,41 @@ Public Class Form1
         DataGridView1.ReadOnly = True
     End Sub
 
-    Private Sub SupplierToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SupplierToolStripMenuItem.Click
+    Private Sub SupplierToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Me.Hide()
         FormSupplier.Show()
+    End Sub
+
+    Private Sub BarangToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles BarangToolStripMenuItem1.Click
+        FormBarang.Show()
+    End Sub
+
+    Private Sub DataBarangToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DataBarangToolStripMenuItem.Click
+        FormDataBarang.Show()
+    End Sub
+
+    Private Sub KategoriToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles KategoriToolStripMenuItem.Click
+        FormKategori.Show()
+    End Sub
+
+    Private Sub SatuanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SatuanToolStripMenuItem.Click
+        FormSatuan.Show()
+    End Sub
+
+    Private Sub PelangganToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles PelangganToolStripMenuItem1.Click
+        FormPelanggan.Show()
+    End Sub
+
+    Private Sub DataPelangganToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DataPelangganToolStripMenuItem.Click
+        FormDataPelanggan.Show()
+    End Sub
+
+    Private Sub SupplierToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles SupplierToolStripMenuItem1.Click
+        FormSupplier.Show()
+
+    End Sub
+
+    Private Sub DataSupplierToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DataSupplierToolStripMenuItem.Click
+        FormDataSupplier.Show()
     End Sub
 End Class

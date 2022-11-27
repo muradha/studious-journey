@@ -77,6 +77,9 @@
     <OutputPath>bin\x64\Release\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Oracle.ManagedDataAccess, Version=4.122.19.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -123,6 +126,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSet2.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form Master Kasir.Designer.vb">
       <DependentUpon>Form Master Kasir.vb</DependentUpon>
     </Compile>
@@ -145,6 +153,12 @@
       <DependentUpon>FormDataPelanggan.vb</DependentUpon>
     </Compile>
     <Compile Include="FormDataPelanggan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDataSupplier.Designer.vb">
+      <DependentUpon>FormDataSupplier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormDataSupplier.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormKategori.Designer.vb">
@@ -215,6 +229,9 @@
     <EmbeddedResource Include="FormDataPelanggan.resx">
       <DependentUpon>FormDataPelanggan.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDataSupplier.resx">
+      <DependentUpon>FormDataSupplier.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormKategori.resx">
       <DependentUpon>FormKategori.vb</DependentUpon>
     </EmbeddedResource>
@@ -252,6 +269,17 @@
     <None Include="DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
+    <None Include="DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet2.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -263,6 +291,9 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
