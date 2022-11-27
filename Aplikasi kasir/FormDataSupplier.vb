@@ -29,17 +29,17 @@ Public Class FormDataSupplier
     Private Sub TxtCari_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtCari.KeyPress
         If e.KeyChar = Chr(27) Then
             Me.Close()
-            'FrmBarangMasuk.DGV.Focus()
-            'FrmBarangMasuk.DGV.CurrentCell = FormBarangMasuk.DGV.Rows(0).Cells(0)
+            FormBarangMasuk.DGV.Focus()
+            FormBarangMasuk.DGV.CurrentCell = FormBarangMasuk.DGV.Rows(0).Cells(0)
         End If
     End Sub
 
     Private Sub DGVSupplier_DoubleClick(sender As Object, e As EventArgs) Handles DGVSupplier.DoubleClick
         Try
             With DGVSupplier
-                'FormBarangMasuk.TxtKode.Text = .SelectedCells(0).Value
-                'FormBarangMasuk.TxtNama.Text = .SelectedCells(1).Value
-                'FormBarangMasuk.TxtAlamat.Text = .SelectedCells(2).Value
+                FormBarangMasuk.TxtKode.Text = .SelectedCells(0).Value
+                FormBarangMasuk.TxtNama.Text = .SelectedCells(1).Value
+                FormBarangMasuk.TxtAlamat.Text = .SelectedCells(2).Value
             End With
             Me.Close()
         Catch ex As Exception

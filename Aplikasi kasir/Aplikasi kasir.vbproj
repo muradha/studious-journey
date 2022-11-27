@@ -143,6 +143,12 @@
     <Compile Include="FormBarang.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormBarangMasuk.Designer.vb">
+      <DependentUpon>FormBarangMasuk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormBarangMasuk.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormDataBarang.Designer.vb">
       <DependentUpon>FormDataBarang.vb</DependentUpon>
     </Compile>
@@ -222,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormBarang.resx">
       <DependentUpon>FormBarang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBarangMasuk.resx">
+      <DependentUpon>FormBarangMasuk.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDataBarang.resx">
       <DependentUpon>FormDataBarang.vb</DependentUpon>
