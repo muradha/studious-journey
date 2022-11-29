@@ -164,6 +164,7 @@ Partial Class FormDataSupplier
         Me.DGVSupplier.Location = New System.Drawing.Point(20, 79)
         Me.DGVSupplier.Name = "DGVSupplier"
         Me.DGVSupplier.ReadOnly = True
+        Me.DGVSupplier.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGVSupplier.Size = New System.Drawing.Size(603, 342)
         Me.DGVSupplier.TabIndex = 11
         '

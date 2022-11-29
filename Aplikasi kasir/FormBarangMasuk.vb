@@ -1,4 +1,5 @@
 ﻿Imports Oracle.ManagedDataAccess.Client
+Imports System.Windows.Forms
 Public Class FormBarangMasuk
     Dim conn As New OracleConnection(oradb)
     Dim cmd As New OracleCommand
@@ -16,11 +17,11 @@ Public Class FormBarangMasuk
     End Sub
 
     Sub BuatKolomBaru()
-        DGV.Columns.Add("Kode", "Kode Barang / Scan Barcode")
-        DGV.Columns.Add("Nama", "Nama Barang")
-        DGV.Columns.Add("Kategori", "Kategori")
-        DGV.Columns.Add("Satuan", "Satuan")
-        DGV.Columns.Add("Jumlah", "Jumlah")
+        DGV.Columns.Add("KODE_BARANG", "Kode Barang / Scan Barcode")
+        DGV.Columns.Add("NAMA_BARANG", "Nama Barang")
+        DGV.Columns.Add("KODE_KATEGORI", "Kategori")
+        DGV.Columns.Add("SATUAN_BARANG", "Satuan")
+        DGV.Columns.Add("JUMLAH", "Jumlah")
         AturLebarKolom()
     End Sub
 
@@ -58,7 +59,7 @@ Public Class FormBarangMasuk
     Private Sub TxtFaktur_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtFaktur.KeyPress
         conn.Open()
         If e.KeyChar = Chr(13) Then
-            cmd = New OracleCommand("SELECT * FROM varang_masuk WHERE faktur='" & TxtFaktur.Text & "'", conn)
+            cmd = New OracleCommand("SELECT * FROM barang_masuk WHERE faktur='" & TxtFaktur.Text & "'", conn)
             rd = cmd.ExecuteReader
             rd.Read()
             If Not rd.HasRows Then
@@ -77,7 +78,7 @@ Public Class FormBarangMasuk
         FormDataSupplier.ShowDialog()
     End Sub
 
-    Private Sub DGV_KeyPress(sender As Object, e As KeyPressEventArgs) Handles DGV.KeyPress
+    Private Sub DGV_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles DGV.KeyPress
         On Error Resume Next
         If e.KeyChar = Chr(13) Then 'Tombol Enter
             TotalItem()
@@ -91,7 +92,9 @@ Public Class FormBarangMasuk
         End If
     End Sub
 
-    Private Sub DGV_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles DGV.CellEndEdit
+    Private Sub DGV_CellEndEdit(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGV.CellEndEdit
+        conn.Open()
+
         If e.ColumnIndex = 0 Then
             'Cari kode barang berdasarkan Grid kolompertama
             cmd = New OracleCommand("SELECT * FROM barang WHERE kode_barang='" & DGV.Rows(e.RowIndex).Cells(0).Value & "'", conn)
@@ -118,26 +121,26 @@ Public Class FormBarangMasuk
             TotalItem()
             DGV.CurrentCell = DGV.Rows(e.RowIndex).Cells(0)
         End If
+        conn.Close()
     End Sub
 
-    Private Sub DGV_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles DGV.EditingControlShowing
-        If e.Control.GetType.ToString =
-            "System.Windows.Forms.DataGridViewTextBoxEditingControl" Then
+    Private Sub GridViewTextBox_KeyPress(sender As Object, e As KeyPressEventArgs)
+        If DGV.CurrentCell.ColumnIndex = 4 Then
+            If ((Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57) And Asc(e.KeyChar) <> 8) Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub DGV_EditingControlShowing(sender As Object, e As System.Windows.Forms.DataGridViewEditingControlShowingEventArgs) Handles DGV.EditingControlShowing
+        If e.Control.GetType.ToString() = "System.Windows.Forms.DataGridViewTextBoxEditingControl" Then
             Dim c As DataGridViewTextBoxEditingControl = CType(e.Control, DataGridViewTextBoxEditingControl)
             RemoveHandler c.KeyPress, AddressOf GridViewTextBox_KeyPress
             AddHandler c.KeyPress, AddressOf GridViewTextBox_KeyPress
         End If
     End Sub
 
-    Private Sub GridViewTextBox_KeyPress(sender As Object, ex As KeyPressEventArgs)
-        If DGV.CurrentCell.ColumnIndex = 4 Then
-            If ((Asc(ex.KeyChar) < 48 Or Asc(ex.KeyChar) > 57) And Asc(ex.KeyChar) <> 8) Then
-                ex.Handled = True
-            End If
-        End If
-    End Sub
-
-    Private Sub DGV_KeyDown(sender As Object, e As KeyEventArgs) Handles DGV.KeyDown
+    Private Sub DGV_KeyDown(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles DGV.KeyDown
         Select Case e.KeyCode
             Case Keys.F1
                 BtnSimpan.Focus()
@@ -163,7 +166,7 @@ Public Class FormBarangMasuk
         conn.Open()
 
         If TxtKode.Text = "" Or TxtFaktur.Text = "" Or Item.Text = "" Then
-            MsgBox("KData belum lengkap, tidak ada transaksi atau supplier / No Faktur masih kosong")
+            MsgBox("Data belum lengkap, tidak ada transaksi atau supplier / No Faktur masih kosong")
             Exit Sub
         Else
             cmd = New OracleCommand("SELECT * FROM barang_masuk WHERE faktur='" & TxtFaktur.Text & "'", conn)

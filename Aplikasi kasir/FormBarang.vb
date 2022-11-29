@@ -18,6 +18,9 @@ Public Class FormBarang
         CmbKategori.Text = ""
         CmbSatuan.Text = ""
         TxtStock.Text = ""
+        TxtHrgBli.Text = ""
+        TxtHrgJual.Text = ""
+        TxtDsknJual.Text = ""
 
         TxtKode.Enabled = True
         BtnUbah.Enabled = False
@@ -71,6 +74,9 @@ Public Class FormBarang
                 CmbKategori.Text = rd.Item("KODE_KATEGORI")
                 CmbSatuan.Text = rd.Item("SATUAN_BARANG")
                 TxtStock.Text = rd.Item("STOCK_BARANG")
+                TxtHrgBli.Text = rd.Item("HARGA_BELI")
+                TxtHrgJual.Text = rd.Item("HARGA_JUAL")
+                TxtDsknJual.Text = rd.Item("DISKON_JUAL")
 
                 TxtKode.Enabled = False
                 BtnSimpan.Enabled = False
@@ -128,7 +134,7 @@ Public Class FormBarang
             rd.Read()
 
             If Not rd.HasRows Then
-                Dim queryTambah As String = "INSERT INTO barang(kode_barang,nama_barang,kode_kategori,satuan_barang,stock_barang) values('" & TxtKode.Text & "','" & TxtNama.Text & "','" & CmbKategori.Text & "','" & CmbSatuan.Text & "','" & Val(TxtStock.Text) & "')"
+                Dim queryTambah As String = "INSERT INTO barang(kode_barang,nama_barang,kode_kategori,satuan_barang,stock_barang,harga_beli,harga_jual,diskon_jual) values('" & TxtKode.Text & "','" & TxtNama.Text & "','" & CmbKategori.Text & "','" & CmbSatuan.Text & "','" & Val(TxtStock.Text) & "','" & Val(TxtHrgBli.Text) & "','" & Val(TxtHrgJual.Text) & "','" & Val(TxtDsknJual.Text) & "')"
                 cmd = New OracleCommand(queryTambah, conn)
                 cmd.ExecuteNonQuery()
                 Bersih()
@@ -156,7 +162,7 @@ Public Class FormBarang
             BtnBatal.Focus()
             Exit Sub
         Else
-            cmd = New OracleCommand("UPDATE barang SET nama_barang='" & TxtNama.Text & "',kode_kategori='" & CmbKategori.Text & "',satuan_barang='" & CmbSatuan.Text & "',stock_barang='" & Val(TxtStock.Text) & "' WHERE kode_barang='" & TxtKode.Text & "'", conn)
+            cmd = New OracleCommand("UPDATE barang SET nama_barang='" & TxtNama.Text & "',kode_kategori='" & CmbKategori.Text & "',satuan_barang='" & CmbSatuan.Text & "',stock_barang='" & Val(TxtStock.Text) & "',harga_beli='" & Val(TxtHrgBli.Text) & "',harga_jual='" & Val(TxtHrgJual.Text) & "',diskon_jual='" & Val(TxtDsknJual.Text) & "' WHERE kode_barang='" & TxtKode.Text & "'", conn)
             cmd.ExecuteNonQuery()
             Bersih()
             TampilGrid()
@@ -191,14 +197,14 @@ Public Class FormBarang
 
     Private Sub TxtCari_TextChanged(sender As Object, e As EventArgs) Handles TxtCari.TextChanged
         If RbNama.Checked = True Then
-            da = New OracleDataAdapter("SELECT * FROM barang WHERE nama_barang like '%" & TxtCari.Text & "%' ORDER BY nama_barang ASC", conn)
+            da = New OracleDataAdapter("SELECT * FROM barang WHERE LOWER(nama_barang) like LOWER('%" & TxtCari.Text & "%') ORDER BY nama_barang ASC", conn)
             ds = New DataSet
             ds.Clear()
             da.Fill(ds, "BARANG")
             DataGridView1.DataSource = (ds.Tables("BARANG"))
             DataGridView1.ReadOnly = True
         ElseIf RbKode.Checked = True Then
-            da = New OracleDataAdapter("SELECT * FROM barang WHERE kode_barang like '%" & TxtCari.Text & "%' ORDER BY kode_barang ASC", conn)
+            da = New OracleDataAdapter("SELECT * FROM barang WHERE LOWER(kode_barang) like LOWER('%" & TxtCari.Text & "%') ORDER BY kode_barang ASC", conn)
             ds = New DataSet
             ds.Clear()
             da.Fill(ds, "BARANG")

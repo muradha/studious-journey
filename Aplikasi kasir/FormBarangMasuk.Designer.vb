@@ -167,7 +167,6 @@ Partial Class FormBarangMasuk
         Me.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV.Location = New System.Drawing.Point(17, 195)
         Me.DGV.Name = "DGV"
-        Me.DGV.ReadOnly = True
         Me.DGV.Size = New System.Drawing.Size(832, 322)
         Me.DGV.TabIndex = 11
         '
@@ -248,6 +247,7 @@ Partial Class FormBarangMasuk
         '
         'Item
         '
+        Me.Item.Enabled = False
         Me.Item.Location = New System.Drawing.Point(749, 558)
         Me.Item.Name = "Item"
         Me.Item.Size = New System.Drawing.Size(100, 20)
@@ -255,9 +255,10 @@ Partial Class FormBarangMasuk
         '
         'BtnSimpan
         '
-        Me.BtnSimpan.Location = New System.Drawing.Point(553, 557)
+        Me.BtnSimpan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnSimpan.Location = New System.Drawing.Point(551, 556)
         Me.BtnSimpan.Name = "BtnSimpan"
-        Me.BtnSimpan.Size = New System.Drawing.Size(113, 23)
+        Me.BtnSimpan.Size = New System.Drawing.Size(82, 23)
         Me.BtnSimpan.TabIndex = 55
         Me.BtnSimpan.Text = "Simpan"
         Me.BtnSimpan.UseVisualStyleBackColor = True
@@ -273,7 +274,7 @@ Partial Class FormBarangMasuk
         '
         'BtnBatal
         '
-        Me.BtnBatal.Location = New System.Drawing.Point(432, 557)
+        Me.BtnBatal.Location = New System.Drawing.Point(431, 557)
         Me.BtnBatal.Name = "BtnBatal"
         Me.BtnBatal.Size = New System.Drawing.Size(113, 23)
         Me.BtnBatal.TabIndex = 53

@@ -48,6 +48,7 @@ Partial Class FormBarang
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.TransaksiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.BtnSatuan = New System.Windows.Forms.Button()
         Me.BtnKategori = New System.Windows.Forms.Button()
         Me.RbKode = New System.Windows.Forms.RadioButton()
@@ -58,8 +59,14 @@ Partial Class FormBarang
         Me.kode = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
+        Me.TxtHrgBli = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TxtHrgJual = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.TxtDsknJual = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -69,15 +76,15 @@ Partial Class FormBarang
         'CmbKategori
         '
         Me.CmbKategori.FormattingEnabled = True
-        Me.CmbKategori.Location = New System.Drawing.Point(356, 32)
+        Me.CmbKategori.Location = New System.Drawing.Point(133, 106)
         Me.CmbKategori.Name = "CmbKategori"
-        Me.CmbKategori.Size = New System.Drawing.Size(121, 21)
+        Me.CmbKategori.Size = New System.Drawing.Size(97, 21)
         Me.CmbKategori.TabIndex = 30
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(308, 35)
+        Me.Label6.Location = New System.Drawing.Point(85, 109)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(46, 13)
         Me.Label6.TabIndex = 28
@@ -85,7 +92,7 @@ Partial Class FormBarang
         '
         'TxtCari
         '
-        Me.TxtCari.Location = New System.Drawing.Point(337, 210)
+        Me.TxtCari.Location = New System.Drawing.Point(337, 266)
         Me.TxtCari.Name = "TxtCari"
         Me.TxtCari.Size = New System.Drawing.Size(136, 20)
         Me.TxtCari.TabIndex = 26
@@ -93,7 +100,7 @@ Partial Class FormBarang
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(32, 212)
+        Me.Label5.Location = New System.Drawing.Point(32, 268)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(94, 13)
         Me.Label5.TabIndex = 24
@@ -232,7 +239,7 @@ Partial Class FormBarang
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(23, 237)
+        Me.DataGridView1.Location = New System.Drawing.Point(23, 293)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(708, 189)
@@ -258,6 +265,13 @@ Partial Class FormBarang
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Label9)
+        Me.Panel1.Controls.Add(Me.TxtDsknJual)
+        Me.Panel1.Controls.Add(Me.Label8)
+        Me.Panel1.Controls.Add(Me.TxtHrgJual)
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.TxtHrgBli)
+        Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.BtnSatuan)
         Me.Panel1.Controls.Add(Me.BtnKategori)
@@ -284,20 +298,29 @@ Partial Class FormBarang
         Me.Panel1.Size = New System.Drawing.Size(754, 557)
         Me.Panel1.TabIndex = 17
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(462, 189)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 39
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'BtnSatuan
         '
-        Me.BtnSatuan.Location = New System.Drawing.Point(483, 68)
+        Me.BtnSatuan.Location = New System.Drawing.Point(236, 138)
         Me.BtnSatuan.Name = "BtnSatuan"
-        Me.BtnSatuan.Size = New System.Drawing.Size(75, 23)
+        Me.BtnSatuan.Size = New System.Drawing.Size(57, 23)
         Me.BtnSatuan.TabIndex = 38
         Me.BtnSatuan.Text = "Cari"
         Me.BtnSatuan.UseVisualStyleBackColor = True
         '
         'BtnKategori
         '
-        Me.BtnKategori.Location = New System.Drawing.Point(483, 32)
+        Me.BtnKategori.Location = New System.Drawing.Point(237, 104)
         Me.BtnKategori.Name = "BtnKategori"
-        Me.BtnKategori.Size = New System.Drawing.Size(75, 23)
+        Me.BtnKategori.Size = New System.Drawing.Size(56, 23)
         Me.BtnKategori.TabIndex = 37
         Me.BtnKategori.Text = "Cari"
         Me.BtnKategori.UseVisualStyleBackColor = True
@@ -305,7 +328,7 @@ Partial Class FormBarang
         'RbKode
         '
         Me.RbKode.AutoSize = True
-        Me.RbKode.Location = New System.Drawing.Point(237, 212)
+        Me.RbKode.Location = New System.Drawing.Point(237, 268)
         Me.RbKode.Name = "RbKode"
         Me.RbKode.Size = New System.Drawing.Size(87, 17)
         Me.RbKode.TabIndex = 34
@@ -316,7 +339,7 @@ Partial Class FormBarang
         'RbNama
         '
         Me.RbNama.AutoSize = True
-        Me.RbNama.Location = New System.Drawing.Point(140, 212)
+        Me.RbNama.Location = New System.Drawing.Point(140, 268)
         Me.RbNama.Name = "RbNama"
         Me.RbNama.Size = New System.Drawing.Size(90, 17)
         Me.RbNama.TabIndex = 33
@@ -327,15 +350,15 @@ Partial Class FormBarang
         'CmbSatuan
         '
         Me.CmbSatuan.FormattingEnabled = True
-        Me.CmbSatuan.Location = New System.Drawing.Point(356, 69)
+        Me.CmbSatuan.Location = New System.Drawing.Point(133, 140)
         Me.CmbSatuan.Name = "CmbSatuan"
-        Me.CmbSatuan.Size = New System.Drawing.Size(121, 21)
+        Me.CmbSatuan.Size = New System.Drawing.Size(97, 21)
         Me.CmbSatuan.TabIndex = 32
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(313, 72)
+        Me.Label7.Location = New System.Drawing.Point(90, 143)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(41, 13)
         Me.Label7.TabIndex = 31
@@ -343,7 +366,7 @@ Partial Class FormBarang
         '
         'TxtStock
         '
-        Me.TxtStock.Location = New System.Drawing.Point(356, 103)
+        Me.TxtStock.Location = New System.Drawing.Point(403, 100)
         Me.TxtStock.Name = "TxtStock"
         Me.TxtStock.Size = New System.Drawing.Size(121, 20)
         Me.TxtStock.TabIndex = 27
@@ -351,7 +374,7 @@ Partial Class FormBarang
         'kode
         '
         Me.kode.AutoSize = True
-        Me.kode.Location = New System.Drawing.Point(311, 106)
+        Me.kode.Location = New System.Drawing.Point(358, 104)
         Me.kode.Name = "kode"
         Me.kode.Size = New System.Drawing.Size(35, 13)
         Me.kode.TabIndex = 0
@@ -363,7 +386,7 @@ Partial Class FormBarang
         Me.GroupBox1.Controls.Add(Me.BtnSimpan)
         Me.GroupBox1.Controls.Add(Me.BtnHapus)
         Me.GroupBox1.Controls.Add(Me.BtnBatal)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 136)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 170)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(415, 52)
         Me.GroupBox1.TabIndex = 35
@@ -372,23 +395,68 @@ Partial Class FormBarang
         '
         'GroupBox2
         '
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 194)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 250)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(731, 243)
         Me.GroupBox2.TabIndex = 36
         Me.GroupBox2.TabStop = False
         '
-        'Button1
+        'TxtHrgBli
         '
-        Me.Button1.Location = New System.Drawing.Point(469, 155)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 39
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.TxtHrgBli.Location = New System.Drawing.Point(403, 30)
+        Me.TxtHrgBli.Name = "TxtHrgBli"
+        Me.TxtHrgBli.Size = New System.Drawing.Size(121, 20)
+        Me.TxtHrgBli.TabIndex = 41
         '
-        'PrintDocument1
+        'Label2
         '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(338, 34)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(56, 13)
+        Me.Label2.TabIndex = 40
+        Me.Label2.Text = "Harga Beli"
+        '
+        'TxtHrgJual
+        '
+        Me.TxtHrgJual.Location = New System.Drawing.Point(404, 65)
+        Me.TxtHrgJual.Name = "TxtHrgJual"
+        Me.TxtHrgJual.Size = New System.Drawing.Size(121, 20)
+        Me.TxtHrgJual.TabIndex = 43
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(336, 69)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(58, 13)
+        Me.Label4.TabIndex = 42
+        Me.Label4.Text = "Harga Jual"
+        '
+        'TxtDsknJual
+        '
+        Me.TxtDsknJual.Location = New System.Drawing.Point(403, 135)
+        Me.TxtDsknJual.Name = "TxtDsknJual"
+        Me.TxtDsknJual.Size = New System.Drawing.Size(121, 20)
+        Me.TxtDsknJual.TabIndex = 45
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(329, 139)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(62, 13)
+        Me.Label8.TabIndex = 44
+        Me.Label8.Text = "Diskon Jual"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(530, 139)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(15, 13)
+        Me.Label9.TabIndex = 46
+        Me.Label9.Text = "%"
         '
         'FormBarang
         '
@@ -449,4 +517,11 @@ Partial Class FormBarang
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents Button1 As Button
     Friend WithEvents PrintDocument1 As Printing.PrintDocument
+    Friend WithEvents TxtDsknJual As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents TxtHrgJual As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents TxtHrgBli As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label9 As Label
 End Class

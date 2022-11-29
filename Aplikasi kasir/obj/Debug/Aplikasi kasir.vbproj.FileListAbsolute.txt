@@ -24,3 +24,7 @@ D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Debug\Aplikasi_k
 D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Debug\Aplikasi_kasir.FormDataSupplier.resources
 D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\bin\Debug\log4net.dll
 D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\bin\Debug\log4net.xml
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Debug\Aplikasi_kasir.FormBarangMasuk.resources
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Debug\Aplikasi_kasir.FormMenuUtama.resources

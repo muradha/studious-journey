@@ -22,7 +22,7 @@ Public Class FormDataBarang
     End Sub
 
     Private Sub CariTxt_TextChanged(sender As Object, e As EventArgs) Handles CariTxt.TextChanged
-        da = New OracleDataAdapter("SELECT * FROM barang WHERE nama_barang like '%" & CariTxt.Text & "%' ORDER BY nama_barang ASC", conn)
+        da = New OracleDataAdapter("SELECT * FROM barang WHERE LOWER(nama_barang) like LOWER('%" & CariTxt.Text & "%') ORDER BY nama_barang ASC", conn)
         ds = New DataSet
         ds.Clear()
         da.Fill(ds, "BARANG")
