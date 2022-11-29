@@ -8,16 +8,12 @@ Public Class Form1
     Dim ds As DataSet
     Dim query As String
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        LoginToolStripMenuItem.Visible = False
-    End Sub
-
-    Private Sub LogoutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LogoutToolStripMenuItem.Click
+    Private Sub LogoutToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Me.Hide()
         logout()
     End Sub
 
-    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs)
         keluar()
     End Sub
 
@@ -35,9 +31,7 @@ Public Class Form1
         levelInput.Items.Add("owner")
         levelInput.Items.Add("kasir")
 
-
-
-        query = "select id as kode,nama,tingkat from admin"
+        query = "select kode_petugas as kode,nama_petugas,status_petugas from petugas"
         cmd = New OracleCommand(query, conn)
         cmd.CommandType = CommandType.Text
         da = New OracleDataAdapter(cmd)
@@ -77,14 +71,14 @@ Public Class Form1
         If Asc(e.KeyChar) = 13 Then
             conn.Open()
             cmd.Connection = conn
-            cmd.CommandText = "select * from admin where id='" & inputKode.Text & "'"
+            cmd.CommandText = "select * from petugas where kode_petugas='" & inputKode.Text & "'"
             cmd.CommandType = CommandType.Text
 
             Dim dr As OracleDataReader = cmd.ExecuteReader()
             If dr.Read() Then
-                inputNama.Text = dr.Item("nama")
-                inputPassword.Text = dr.Item("password")
-                levelInput.SelectedItem = dr.Item("tingkat")
+                inputNama.Text = dr.Item("nama_petugas")
+                inputPassword.Text = dr.Item("password_petugas")
+                levelInput.SelectedItem = dr.Item("status_petugas")
             Else
                 MsgBox("Data tidak ada")
             End If
@@ -100,7 +94,7 @@ Public Class Form1
         If inputKode.Text = "" Or inputNama.Text = "" Or inputPassword.Text = "" Or levelInput.Text = "" Then
             MsgBox("Silahkan isi data terlebih dahulu")
         Else
-            cmd.CommandText = "UPDATE admin set nama='" & inputNama.Text & "', password='" & inputPassword.Text & "', tingkat='" & levelInput.SelectedItem & "' where id='" & inputKode.Text & "'"
+            cmd.CommandText = "UPDATE petugas set nama_petugas='" & inputNama.Text & "', password_petugas='" & inputPassword.Text & "', status_petugas='" & levelInput.SelectedItem & "' where kode_petugas='" & inputKode.Text & "'"
             cmd.Connection = conn
             conn.Open()
             Try
@@ -120,7 +114,7 @@ Public Class Form1
         If inputKode.Text = "" Or inputNama.Text = "" Or inputPassword.Text = "" Or levelInput.Text = "" Then
             MsgBox("Silahkan isi data terlebih dahulu")
         Else
-            cmd.CommandText = "DELETE FROM admin where id='" & inputKode.Text & "'"
+            cmd.CommandText = "DELETE FROM petugas where kode_petugas='" & inputKode.Text & "'"
             cmd.Connection = conn
             conn.Open()
             Try
@@ -145,7 +139,7 @@ Public Class Form1
     End Sub
 
     Private Sub TxtCari_TextChanged(sender As Object, e As EventArgs) Handles TxtCari.TextChanged
-        query = "select id as kode,nama,tingkat from admin WHERE nama like '%" & TxtCari.Text & "%' order by nama asc"
+        query = "select kode_petugas as kode,nama_petugas,status_petugas from petugas WHERE lower(nama_petugas) like lower('%" & TxtCari.Text & "%') order by nama_petugas asc"
         cmd = New OracleCommand(query, conn)
         cmd.CommandType = CommandType.Text
         da = New OracleDataAdapter(cmd)
@@ -158,43 +152,5 @@ Public Class Form1
         DataGridView1.DataSource = ds.Tables(0)
 
         DataGridView1.ReadOnly = True
-    End Sub
-
-    Private Sub SupplierToolStripMenuItem_Click(sender As Object, e As EventArgs)
-        Me.Hide()
-        FormSupplier.Show()
-    End Sub
-
-    Private Sub BarangToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles BarangToolStripMenuItem1.Click
-        FormBarang.Show()
-    End Sub
-
-    Private Sub DataBarangToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DataBarangToolStripMenuItem.Click
-        FormDataBarang.Show()
-    End Sub
-
-    Private Sub KategoriToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles KategoriToolStripMenuItem.Click
-        FormKategori.Show()
-    End Sub
-
-    Private Sub SatuanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SatuanToolStripMenuItem.Click
-        FormSatuan.Show()
-    End Sub
-
-    Private Sub PelangganToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles PelangganToolStripMenuItem1.Click
-        FormPelanggan.Show()
-    End Sub
-
-    Private Sub DataPelangganToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DataPelangganToolStripMenuItem.Click
-        FormDataPelanggan.Show()
-    End Sub
-
-    Private Sub SupplierToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles SupplierToolStripMenuItem1.Click
-        FormSupplier.Show()
-
-    End Sub
-
-    Private Sub DataSupplierToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DataSupplierToolStripMenuItem.Click
-        FormDataSupplier.Show()
     End Sub
 End Class

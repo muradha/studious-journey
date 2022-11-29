@@ -1,6 +1,5 @@
 ﻿Imports Oracle.ManagedDataAccess.Client
-Imports System.Windows.Forms
-Public Class FormBarangMasuk
+Public Class FormBarangKeluar
     Dim conn As New OracleConnection(oradb)
     Dim cmd As New OracleCommand
     Dim rd As OracleDataReader
@@ -13,8 +12,8 @@ Public Class FormBarangMasuk
         Item.Text = ""
         TxtKode.Text = ""
         TxtNama.Text = ""
-        TxtAlamat.Text = ""
-
+        TxtTelp.Text = ""
+        TxtStatus.Text = ""
     End Sub
 
     Sub BuatKolomBaru()
@@ -52,21 +51,27 @@ Public Class FormBarangMasuk
         Next
     End Sub
 
-    Private Sub FormBarangMasuk_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub BtnPelanggan_Click(sender As Object, e As EventArgs) Handles BtnPelanggan.Click
+        DGV.Focus()
+        DGV.CurrentCell = DGV.Rows(0).Cells(0)
+        FormDataPelanggan.ShowDialog()
+    End Sub
+
+    Private Sub FormBarangKeluar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conn.Open()
         BuatKolomBaru()
         BersihkanText()
+        TxtUser.Text = "Nama User"
         conn.Close()
     End Sub
-
     Private Sub TxtFaktur_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtFaktur.KeyPress
         conn.Open()
         If e.KeyChar = Chr(13) Then
-            cmd = New OracleCommand("SELECT * FROM barang_masuk WHERE faktur='" & TxtFaktur.Text & "'", conn)
+            cmd = New OracleCommand("SELECT * FROM barang_keluar WHERE faktur='" & TxtFaktur.Text & "'", conn)
             rd = cmd.ExecuteReader
             rd.Read()
             If Not rd.HasRows Then
-                BtnSupplier.Focus()
+                BtnPelanggan.Focus()
             Else
                 MsgBox("Nomor faktur telah ada sebelumnya, harap ganti nomor faktur", vbInformation + vbOKOnly, "Pesan")
                 TxtFaktur.Focus()
@@ -75,13 +80,7 @@ Public Class FormBarangMasuk
         conn.Close()
     End Sub
 
-    Private Sub BtnSupplier_Click(sender As Object, e As EventArgs) Handles BtnSupplier.Click
-        DGV.Focus()
-        DGV.CurrentCell = DGV.Rows(0).Cells(0)
-        FormDataSupplier.ShowDialog()
-    End Sub
-
-    Private Sub DGV_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles DGV.KeyPress
+    Private Sub DGV_KeyPress(sender As Object, e As KeyPressEventArgs) Handles DGV.KeyPress
         On Error Resume Next
         If e.KeyChar = Chr(13) Then 'Tombol Enter
             TotalItem()
@@ -94,12 +93,27 @@ Public Class FormBarangMasuk
             DGV.CurrentCell = DGV.Rows(0).Cells(0)
         End If
     End Sub
+    Private Sub GridViewTextBox_KeyPress(sender As Object, e As KeyPressEventArgs)
+        If DGV.CurrentCell.ColumnIndex = 4 Then
+            If ((Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57) And Asc(e.KeyChar) <> 8) Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
 
-    Private Sub DGV_CellEndEdit(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGV.CellEndEdit
+    Private Sub DGV_EditingControlShowing(sender As Object, e As System.Windows.Forms.DataGridViewEditingControlShowingEventArgs) Handles DGV.EditingControlShowing
+        If e.Control.GetType.ToString() = "System.Windows.Forms.DataGridViewTextBoxEditingControl" Then
+            Dim c As DataGridViewTextBoxEditingControl = CType(e.Control, DataGridViewTextBoxEditingControl)
+            RemoveHandler c.KeyPress, AddressOf GridViewTextBox_KeyPress
+            AddHandler c.KeyPress, AddressOf GridViewTextBox_KeyPress
+        End If
+    End Sub
+
+    Private Sub DGV_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles DGV.CellEndEdit
         conn.Open()
 
         If e.ColumnIndex = 0 Then
-            'Cari kode barang berdasarkan Grid kolom pertama
+            'Cari kode barang berdasarkan Grid kolompertama
             cmd = New OracleCommand("SELECT * FROM barang WHERE kode_barang='" & DGV.Rows(e.RowIndex).Cells(0).Value & "'", conn)
             rd = cmd.ExecuteReader
             rd.Read()
@@ -111,8 +125,8 @@ Public Class FormBarangMasuk
                 DGV.Rows(e.RowIndex).Cells(4).Value = rd.Item(4)
                 DGV.Rows(e.RowIndex).Cells(5).Value = rd.Item(5)
                 DGV.Rows(e.RowIndex).Cells(6).Value = rd.Item(6)
-                DGV.Rows(e.RowIndex).Cells(2).Value = 1
                 DGV.Rows(e.RowIndex).Cells(7).Value = DGV.Rows(e.RowIndex).Cells(2).Value * DGV.Rows(e.RowIndex).Cells(5).Value
+                DGV.Rows(e.RowIndex).Cells(2).Value = 1
                 TotalItem()
                 DGV.CurrentCell = DGV(2, 0)
             Else
@@ -134,22 +148,6 @@ Public Class FormBarangMasuk
         conn.Close()
     End Sub
 
-    Private Sub GridViewTextBox_KeyPress(sender As Object, e As KeyPressEventArgs)
-        If DGV.CurrentCell.ColumnIndex = 4 Then
-            If ((Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57) And Asc(e.KeyChar) <> 8) Then
-                e.Handled = True
-            End If
-        End If
-    End Sub
-
-    Private Sub DGV_EditingControlShowing(sender As Object, e As System.Windows.Forms.DataGridViewEditingControlShowingEventArgs) Handles DGV.EditingControlShowing
-        If e.Control.GetType.ToString() = "System.Windows.Forms.DataGridViewTextBoxEditingControl" Then
-            Dim c As DataGridViewTextBoxEditingControl = CType(e.Control, DataGridViewTextBoxEditingControl)
-            RemoveHandler c.KeyPress, AddressOf GridViewTextBox_KeyPress
-            AddHandler c.KeyPress, AddressOf GridViewTextBox_KeyPress
-        End If
-    End Sub
-
     Private Sub DGV_KeyDown(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles DGV.KeyDown
         Select Case e.KeyCode
             Case Keys.F1
@@ -165,13 +163,13 @@ Public Class FormBarangMasuk
         FormDataBarang.ShowDialog()
     End Sub
 
+
     Private Sub BtnBatal_Click(sender As Object, e As EventArgs) Handles BtnBatal.Click
         BersihkanText()
         DGV.Columns.Clear()
         BuatKolomBaru()
         DGV.Focus()
     End Sub
-
     Private Sub BtnSimpan_Click(sender As Object, e As EventArgs) Handles BtnSimpan.Click
         conn.Open()
 
@@ -179,16 +177,16 @@ Public Class FormBarangMasuk
             MsgBox("Data belum lengkap, tidak ada transaksi atau supplier / No Faktur masih kosong")
             Exit Sub
         Else
-            cmd = New OracleCommand("SELECT * FROM barang_masuk WHERE faktur='" & TxtFaktur.Text & "'", conn)
+            cmd = New OracleCommand("SELECT * FROM barang_keluar WHERE faktur='" & TxtFaktur.Text & "'", conn)
             rd = cmd.ExecuteReader
             rd.Read()
 
             If Not rd.HasRows Then
-                Dim simpanmaster As String = "INSERT INTO barang_masuk(faktur,tanggal,kode_petugas,kode_supplier) values('" & TxtFaktur.Text & "','" & Now().ToString("dd-MMM-yy")  & "','" & "Admin" & "','" & TxtKode.Text & "')"
+                Dim simpanmaster As String = "INSERT INTO barang_keluar(faktur,tanggal,kode_petugas,kode_pelanggan) values('" & TxtFaktur.Text & "','" & Now().ToString("dd-MMM-yy") & "','" & "Kasir" & "','" & TxtKode.Text & "')"
                 cmd = New OracleCommand(simpanmaster, conn)
                 cmd.ExecuteNonQuery()
                 For baris As Integer = 0 To DGV.Rows.Count - 2
-                    Dim sqlsimpan As String = "INSERT INTO barang_masuk_detail(faktur, kode_barang,nama_barang,jumlah) values('" & TxtFaktur.Text & "','" & DGV.Rows(baris).Cells(0).Value & "','" & DGV.Rows(baris).Cells(1).Value & "','" & DGV.Rows(baris).Cells(2).Value & "')"
+                    Dim sqlsimpan As String = "INSERT INTO barang_keluar_detail(faktur, kode_barang,nama_barang,jumlah) values('" & TxtFaktur.Text & "','" & DGV.Rows(baris).Cells(0).Value & "','" & DGV.Rows(baris).Cells(1).Value & "','" & DGV.Rows(baris).Cells(2).Value & "')"
                     cmd = New OracleCommand(sqlsimpan, conn)
                     cmd.ExecuteNonQuery()
 
@@ -218,7 +216,6 @@ Public Class FormBarangMasuk
         End If
         conn.Close()
     End Sub
-
 
     Private Sub DGV_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles DGV.CellValueChanged
         TotalItem()

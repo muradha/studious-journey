@@ -134,7 +134,7 @@ Public Class FormBarang
             rd.Read()
 
             If Not rd.HasRows Then
-                Dim queryTambah As String = "INSERT INTO barang(kode_barang,nama_barang,kode_kategori,satuan_barang,stock_barang,harga_beli,harga_jual,diskon_jual) values('" & TxtKode.Text & "','" & TxtNama.Text & "','" & CmbKategori.Text & "','" & CmbSatuan.Text & "','" & Val(TxtStock.Text) & "','" & Val(TxtHrgBli.Text) & "','" & Val(TxtHrgJual.Text) & "','" & Val(TxtDsknJual.Text) & "')"
+                Dim queryTambah As String = "INSERT INTO barang(kode_barang,nama_barang,kode_kategori,satuan_barang,stock_barang,harga_beli,harga_jual,diskon_jual,subtotal) values('" & TxtKode.Text & "','" & TxtNama.Text & "','" & CmbKategori.Text & "','" & CmbSatuan.Text & "','" & Val(TxtStock.Text) & "','" & Val(TxtHrgBli.Text) & "','" & Val(TxtHrgJual.Text) & "','" & Val(TxtDsknJual.Text) & ",'" & Val(TxtStock.Text) * Val(TxtHrgBli.Text) & "')"
                 cmd = New OracleCommand(queryTambah, conn)
                 cmd.ExecuteNonQuery()
                 Bersih()

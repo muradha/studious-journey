@@ -1,4 +1,16 @@
-﻿Public Class FormMenuUtama
+﻿Imports Oracle.ManagedDataAccess.Client
+
+Public Class FormMenuUtama
+
+    Dim conn As New OracleConnection(oradb)
+    Dim cmd As New OracleCommand
+    Dim cek As OracleDataReader
+    Dim da As OracleDataAdapter
+    Dim cb As OracleCommandBuilder
+    Dim ds As DataSet
+    Dim query As String
+
+
     Private Sub FormMenuUtama_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LblHari.Text = Format(Now, "dddd, dd-MMMM-yyyy")
     End Sub
@@ -7,7 +19,7 @@
         LblJam.Text = Format(Now, "hh:mm:ss")
     End Sub
 
-    Private Sub BtnMinimize_Click(sender As Object, e As EventArgs) Handles BtnMinimize.Click
+    Private Sub BtnMinimize_Click(sender As Object, e As EventArgs)
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
@@ -20,16 +32,16 @@
     End Sub
 
     Private Sub BtnLogout_Click(sender As Object, e As EventArgs) Handles BtnLogout.Click
-        'Me.Hide()
-        'formlogin.show
+        Me.Hide()
+        logout()
     End Sub
 
-    Private Sub BtnGantiPass_Click(sender As Object, e As EventArgs) Handles BtnGantiPass.Click
+    Private Sub BtnGantiPass_Click(sender As Object, e As EventArgs)
         'FormGantiPassword.ShowDialog()
     End Sub
 
     Private Sub BtnPengguna_Click(sender As Object, e As EventArgs) Handles BtnPengguna.Click
-
+        Form1.Show()
     End Sub
 
     Private Sub BtnSupplier_Click(sender As Object, e As EventArgs) Handles BtnSupplier.Click
@@ -42,7 +54,6 @@
 
     Private Sub BtnBarangMasuk_Click(sender As Object, e As EventArgs) Handles BtnBarangMasuk.Click
         FormBarangMasuk.Show()
-        FormBarangMasuk.TxtKasir.Text = Me.LblNmUsr.Text
     End Sub
 
     Private Sub BtnSatuan_Click(sender As Object, e As EventArgs) Handles BtnSatuan.Click
@@ -56,5 +67,10 @@
     Private Sub BtnBarang_Click(sender As Object, e As EventArgs) Handles BtnBarang.Click
         FormBarang.ShowDialog()
     End Sub
+
+    Private Sub BtnBarangKeluar_Click(sender As Object, e As EventArgs) Handles BtnBarangKeluar.Click
+        FormBarangKeluar.Show()
+    End Sub
+
 
 End Class

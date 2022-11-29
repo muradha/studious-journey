@@ -15,13 +15,13 @@ Public Class Login
             conn.Open()
             cmd.Connection = conn
             cmd.CommandType = CommandType.Text
-            cmd.CommandText = "select * from admin where nama='" & UsernameTextBox.Text & "' and password='" & PasswordTextBox.Text & "'"
+            cmd.CommandText = "select * from petugas where nama_petugas='" & UsernameTextBox.Text & "' and password_petugas='" & PasswordTextBox.Text & "'"
             cmd.ExecuteNonQuery()
             cek = cmd.ExecuteReader()
             cek.Read()
             If cek.HasRows Then
                 Me.Hide()
-                Form1.Show()
+                FormMenuUtama.Show()
             Else
                 MsgBox("Username atau Password salah !")
             End If
@@ -50,4 +50,7 @@ Public Class Login
         Form1.Show()
     End Sub
 
+    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

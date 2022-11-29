@@ -30,18 +30,18 @@ Public Class FormDataPelanggan
     Private Sub TxtCari_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtCari.KeyPress
         If e.KeyChar = Chr(27) Then
             Me.Close()
-            'FrmBarangKeluar.DGV.Focus()
-            'FrmBarangKeluar.DGV.CurrentCell = FormBarangkeluar.DGV.Rows(0).Cells(0)
+            FormBarangKeluar.DGV.Focus()
+            FormBarangKeluar.DGV.CurrentCell = FormBarangKeluar.DGV.Rows(0).Cells(0)
         End If
     End Sub
 
     Private Sub DGVPelanggan_DoubleClick(sender As Object, e As EventArgs) Handles DGVPelanggan.DoubleClick
         Try
             With DGVPelanggan
-                'FormBarangKeluar.TxtKode.Text = .SelectedCells(0).Value
-                'FormBarangKeluar.TxtNama.Text = .SelectedCells(1).Value
-                'FormBarangKeluar.TxtAlamat.Text = .SelectedCells(2).Value
-                'FormBarangKeluar.TxtStatus.Text = .SelectedCells(4).Value
+                FormBarangKeluar.TxtKode.Text = .SelectedCells(0).Value
+                FormBarangKeluar.TxtNama.Text = .SelectedCells(1).Value
+                FormBarangKeluar.TxtTelp.Text = .SelectedCells(3).Value
+                FormBarangKeluar.TxtStatus.Text = .SelectedCells(4).Value
             End With
             Me.Close()
         Catch ex As Exception

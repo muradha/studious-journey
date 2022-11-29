@@ -10,7 +10,6 @@ D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Debug\Aplikasi k
 D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Debug\Aplikasi kasir.pdb
 D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\bin\Debug\Oracle.ManagedDataAccess.dll
 D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Debug\Aplikasi kasir.vbproj.CopyComplete
-D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Debug\Aplikasi_kasir.Form2.resources
 D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Debug\Aplikasi_kasir.Login.resources
 D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Debug\Aplikasi_kasir.Form1.resources
 D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Debug\Aplikasi kasir.vbproj.AssemblyReference.cache
@@ -28,3 +27,6 @@ D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Debug\Aplikasi_k
 D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
 D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
 D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Debug\Aplikasi_kasir.FormMenuUtama.resources
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Debug\Aplikasi_kasir.FormPembelian.resources
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Debug\Aplikasi_kasir.FormBarangKeluar.resources
+D:\project visual studio 2019\Aplikasi kasir\Aplikasi kasir\obj\Debug\Aplikasi_kasir.TampilanBayar.resources

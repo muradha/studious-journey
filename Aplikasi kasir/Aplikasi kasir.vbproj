@@ -132,16 +132,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet2.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Form Master Kasir.Designer.vb">
-      <DependentUpon>Form Master Kasir.vb</DependentUpon>
+    <Compile Include="FormKasir.Designer.vb">
+      <DependentUpon>FormKasir.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form Master Kasir.vb">
+    <Compile Include="FormKasir.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormBarang.Designer.vb">
       <DependentUpon>FormBarang.vb</DependentUpon>
     </Compile>
     <Compile Include="FormBarang.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBarangKeluar.Designer.vb">
+      <DependentUpon>FormBarangKeluar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormBarangKeluar.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormBarangMasuk.Designer.vb">
@@ -211,12 +217,6 @@
       <DependentUpon>Login.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.vb">
-      <DependentUpon>Form2.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form2.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Modul.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -234,13 +234,22 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="TampilanBayar.Designer.vb">
+      <DependentUpon>TampilanBayar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TampilanBayar.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form Master Kasir.resx">
-      <DependentUpon>Form Master Kasir.vb</DependentUpon>
+    <EmbeddedResource Include="FormKasir.resx">
+      <DependentUpon>FormKasir.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBarang.resx">
       <DependentUpon>FormBarang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBarangKeluar.resx">
+      <DependentUpon>FormBarangKeluar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBarangMasuk.resx">
       <DependentUpon>FormBarangMasuk.vb</DependentUpon>
@@ -275,14 +284,14 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TampilanBayar.resx">
+      <DependentUpon>TampilanBayar.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

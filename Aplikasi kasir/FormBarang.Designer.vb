@@ -32,22 +32,17 @@ Partial Class FormBarang
         Me.BtnSimpan = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TransaksiPembelianToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BtnHapus = New System.Windows.Forms.Button()
-        Me.TransaksiPenjualanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MinumanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.OwnerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.KasirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LoginToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.BtnUbah = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.TransaksiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.TxtDsknJual = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.TxtHrgJual = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.TxtHrgBli = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.BtnSatuan = New System.Windows.Forms.Button()
         Me.BtnKategori = New System.Windows.Forms.Button()
@@ -60,15 +55,8 @@ Partial Class FormBarang
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
-        Me.TxtHrgBli = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.TxtHrgJual = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.TxtDsknJual = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -156,12 +144,6 @@ Partial Class FormBarang
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Nama"
         '
-        'TransaksiPembelianToolStripMenuItem
-        '
-        Me.TransaksiPembelianToolStripMenuItem.Name = "TransaksiPembelianToolStripMenuItem"
-        Me.TransaksiPembelianToolStripMenuItem.Size = New System.Drawing.Size(192, 22)
-        Me.TransaksiPembelianToolStripMenuItem.Text = "Transaksi Pembelian"
-        '
         'BtnHapus
         '
         Me.BtnHapus.Location = New System.Drawing.Point(224, 19)
@@ -170,62 +152,6 @@ Partial Class FormBarang
         Me.BtnHapus.TabIndex = 17
         Me.BtnHapus.Text = "&Hapus"
         Me.BtnHapus.UseVisualStyleBackColor = True
-        '
-        'TransaksiPenjualanToolStripMenuItem
-        '
-        Me.TransaksiPenjualanToolStripMenuItem.Name = "TransaksiPenjualanToolStripMenuItem"
-        Me.TransaksiPenjualanToolStripMenuItem.Size = New System.Drawing.Size(192, 22)
-        Me.TransaksiPenjualanToolStripMenuItem.Text = "Transaksi Penjualan"
-        '
-        'MinumanToolStripMenuItem
-        '
-        Me.MinumanToolStripMenuItem.Name = "MinumanToolStripMenuItem"
-        Me.MinumanToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
-        Me.MinumanToolStripMenuItem.Text = "Minuman"
-        '
-        'OwnerToolStripMenuItem
-        '
-        Me.OwnerToolStripMenuItem.Name = "OwnerToolStripMenuItem"
-        Me.OwnerToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
-        Me.OwnerToolStripMenuItem.Text = "Owner"
-        '
-        'KasirToolStripMenuItem
-        '
-        Me.KasirToolStripMenuItem.Name = "KasirToolStripMenuItem"
-        Me.KasirToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
-        Me.KasirToolStripMenuItem.Text = "Kasir"
-        '
-        'ToolStripMenuItem1
-        '
-        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.KasirToolStripMenuItem, Me.OwnerToolStripMenuItem, Me.MinumanToolStripMenuItem})
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(85, 20)
-        Me.ToolStripMenuItem1.Text = "Data Master"
-        '
-        'ExitToolStripMenuItem
-        '
-        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(112, 22)
-        Me.ExitToolStripMenuItem.Text = "Exit"
-        '
-        'LogoutToolStripMenuItem
-        '
-        Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(112, 22)
-        Me.LogoutToolStripMenuItem.Text = "Logout"
-        '
-        'LoginToolStripMenuItem
-        '
-        Me.LoginToolStripMenuItem.Name = "LoginToolStripMenuItem"
-        Me.LoginToolStripMenuItem.Size = New System.Drawing.Size(112, 22)
-        Me.LoginToolStripMenuItem.Text = "Login"
-        '
-        'ToolStripMenuItem2
-        '
-        Me.ToolStripMenuItem2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoginToolStripMenuItem, Me.LogoutToolStripMenuItem, Me.ExitToolStripMenuItem})
-        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(54, 20)
-        Me.ToolStripMenuItem2.Text = "Profile"
         '
         'BtnUbah
         '
@@ -245,26 +171,10 @@ Partial Class FormBarang
         Me.DataGridView1.Size = New System.Drawing.Size(708, 189)
         Me.DataGridView1.TabIndex = 11
         '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.BackColor = System.Drawing.Color.Transparent
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.ToolStripMenuItem1, Me.TransaksiToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(754, 24)
-        Me.MenuStrip1.TabIndex = 14
-        Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'TransaksiToolStripMenuItem
-        '
-        Me.TransaksiToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TransaksiPenjualanToolStripMenuItem, Me.TransaksiPembelianToolStripMenuItem})
-        Me.TransaksiToolStripMenuItem.Name = "TransaksiToolStripMenuItem"
-        Me.TransaksiToolStripMenuItem.Size = New System.Drawing.Size(74, 20)
-        Me.TransaksiToolStripMenuItem.Text = "Transaksi"
-        '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Label10)
         Me.Panel1.Controls.Add(Me.Label9)
         Me.Panel1.Controls.Add(Me.TxtDsknJual)
         Me.Panel1.Controls.Add(Me.Label8)
@@ -288,7 +198,6 @@ Partial Class FormBarang
         Me.Panel1.Controls.Add(Me.TxtKode)
         Me.Panel1.Controls.Add(Me.kode)
         Me.Panel1.Controls.Add(Me.DataGridView1)
-        Me.Panel1.Controls.Add(Me.MenuStrip1)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.GroupBox1)
@@ -297,6 +206,63 @@ Partial Class FormBarang
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(754, 557)
         Me.Panel1.TabIndex = 17
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(530, 139)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(15, 13)
+        Me.Label9.TabIndex = 46
+        Me.Label9.Text = "%"
+        '
+        'TxtDsknJual
+        '
+        Me.TxtDsknJual.Location = New System.Drawing.Point(403, 135)
+        Me.TxtDsknJual.Name = "TxtDsknJual"
+        Me.TxtDsknJual.Size = New System.Drawing.Size(121, 20)
+        Me.TxtDsknJual.TabIndex = 45
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(329, 139)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(62, 13)
+        Me.Label8.TabIndex = 44
+        Me.Label8.Text = "Diskon Jual"
+        '
+        'TxtHrgJual
+        '
+        Me.TxtHrgJual.Location = New System.Drawing.Point(404, 65)
+        Me.TxtHrgJual.Name = "TxtHrgJual"
+        Me.TxtHrgJual.Size = New System.Drawing.Size(121, 20)
+        Me.TxtHrgJual.TabIndex = 43
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(336, 69)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(58, 13)
+        Me.Label4.TabIndex = 42
+        Me.Label4.Text = "Harga Jual"
+        '
+        'TxtHrgBli
+        '
+        Me.TxtHrgBli.Location = New System.Drawing.Point(403, 30)
+        Me.TxtHrgBli.Name = "TxtHrgBli"
+        Me.TxtHrgBli.Size = New System.Drawing.Size(121, 20)
+        Me.TxtHrgBli.TabIndex = 41
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(338, 34)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(56, 13)
+        Me.Label2.TabIndex = 40
+        Me.Label2.Text = "Harga Beli"
         '
         'Button1
         '
@@ -401,68 +367,21 @@ Partial Class FormBarang
         Me.GroupBox2.TabIndex = 36
         Me.GroupBox2.TabStop = False
         '
-        'TxtHrgBli
+        'Label10
         '
-        Me.TxtHrgBli.Location = New System.Drawing.Point(403, 30)
-        Me.TxtHrgBli.Name = "TxtHrgBli"
-        Me.TxtHrgBli.Size = New System.Drawing.Size(121, 20)
-        Me.TxtHrgBli.TabIndex = 41
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(338, 34)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(56, 13)
-        Me.Label2.TabIndex = 40
-        Me.Label2.Text = "Harga Beli"
-        '
-        'TxtHrgJual
-        '
-        Me.TxtHrgJual.Location = New System.Drawing.Point(404, 65)
-        Me.TxtHrgJual.Name = "TxtHrgJual"
-        Me.TxtHrgJual.Size = New System.Drawing.Size(121, 20)
-        Me.TxtHrgJual.TabIndex = 43
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(336, 69)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(58, 13)
-        Me.Label4.TabIndex = 42
-        Me.Label4.Text = "Harga Jual"
-        '
-        'TxtDsknJual
-        '
-        Me.TxtDsknJual.Location = New System.Drawing.Point(403, 135)
-        Me.TxtDsknJual.Name = "TxtDsknJual"
-        Me.TxtDsknJual.Size = New System.Drawing.Size(121, 20)
-        Me.TxtDsknJual.TabIndex = 45
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(329, 139)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(62, 13)
-        Me.Label8.TabIndex = 44
-        Me.Label8.Text = "Diskon Jual"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(530, 139)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(15, 13)
-        Me.Label9.TabIndex = 46
-        Me.Label9.Text = "%"
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Segoe UI Black", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(14, 6)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(81, 21)
+        Me.Label10.TabIndex = 47
+        Me.Label10.Text = "BARANG"
         '
         'FormBarang
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 576)
+        Me.ClientSize = New System.Drawing.Size(779, 576)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
@@ -470,8 +389,6 @@ Partial Class FormBarang
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form Barang"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -489,21 +406,9 @@ Partial Class FormBarang
     Friend WithEvents BtnSimpan As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents TransaksiPembelianToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BtnHapus As Button
-    Friend WithEvents TransaksiPenjualanToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents MinumanToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents OwnerToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents KasirToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents LogoutToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents LoginToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
     Friend WithEvents BtnUbah As Button
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents TransaksiToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Panel1 As Panel
     Friend WithEvents CmbSatuan As ComboBox
     Friend WithEvents Label7 As Label
@@ -524,4 +429,5 @@ Partial Class FormBarang
     Friend WithEvents TxtHrgBli As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label9 As Label
+    Friend WithEvents Label10 As Label
 End Class
